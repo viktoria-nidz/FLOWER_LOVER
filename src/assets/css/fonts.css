@@ -1,0 +1,100 @@
+/* oswald-300 - cyrillic */
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 300;
+    src: local(''),
+        url('../fonts/Oswald/oswald-v48-cyrillic-300.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/Oswald/oswald-v48-cyrillic-300.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* oswald-regular - cyrillic */
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/Oswald/oswald-v48-cyrillic-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/Oswald/oswald-v48-cyrillic-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* oswald-700 - cyrillic */
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('../fonts/Oswald/oswald-v48-cyrillic-700.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/Oswald/oswald-v48-cyrillic-700.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* cormorant-300 - cyrillic */
+@font-face {
+    font-family: 'Cormorant';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/Cormorant/cormorant-v18-cyrillic-300.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-300.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-300.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-300.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-300.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-300.svg#Cormorant') format('svg');
+    /* Legacy iOS */
+}
+
+/* cormorant-regular - cyrillic */
+@font-face {
+    font-family: 'Cormorant';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Cormorant/cormorant-v18-cyrillic-regular.eot');
+    /* IE9 Compat Modes */
+    src: local(''),
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-regular.eot?#iefix') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-regular.woff2') format('woff2'),
+        /* Super Modern Browsers */
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-regular.woff') format('woff'),
+        /* Modern Browsers */
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/Cormorant/cormorant-v18-cyrillic-regular.svg#Cormorant') format('svg');
+    /* Legacy iOS */
+}
+
+/* roboto-condensed-regular - cyrillic */
+@font-face {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/Roboto-Condensed/roboto-condensed-v25-cyrillic-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/Roboto-Condensed/roboto-condensed-v25-cyrillic-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+/* mrs-saint-delafield-regular - latin */
+@font-face {
+    font-family: 'Mrs Saint Delafield';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/SaintDelafield/mrs-saint-delafield-v13-latin-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/SaintDelafield/mrs-saint-delafield-v13-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
