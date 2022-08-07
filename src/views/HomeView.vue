@@ -26,8 +26,7 @@
                       title="instagram"
                       target="_blank"
                       rel="noopenner noreferrer"
-                     
-                     >
+                    >
                       <span class="icon-instagram"></span>
                     </router-link>
                   </li>
@@ -361,7 +360,8 @@
             <div class="social_wrap">
               <ul class="social_networks">
                 <li>
-                  <router-link  to="https://www.instagram.com/"
+                  <router-link
+                    to="https://www.instagram.com/"
                     title="instagram"
                     target="_blank"
                     rel="noopenner noreferrer"
@@ -371,7 +371,7 @@
                 </li>
                 <li>
                   <router-link
-                   to="https://www.whatsapp.com/?lang=uk"
+                    to="https://www.whatsapp.com/?lang=uk"
                     title="whatsapp"
                     target="_blank"
                     rel="noopenner noreferrer"
@@ -381,9 +381,9 @@
                 </li>
 
                 <li>
-                  <router-link to="https://www.viber.com/en/"
+                  <router-link
+                    to="https://www.viber.com/en/"
                     title="viber"
-  
                     target="_blank"
                     rel="noopenner noreferrer"
                   >
