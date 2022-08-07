@@ -23,7 +23,7 @@
         </div>
 
         <ul class="mobile">
-          <li><router-link to="/">Каталог</router-link></li>
+          <li><router-link to="/CatalogView">Каталог</router-link></li>
           <li @click="toggleMenu">
             <router-link to="/DeliveryPaymentView"
               >Доставка і оплата
@@ -127,7 +127,7 @@
         </div>
 
         <ul>
-          <li><router-link to="/">Каталог</router-link></li>
+          <li><router-link to="/CatalogView">Каталог</router-link></li>
           <li>
             <router-link to="/DeliveryPaymentView"
               >Доставка і оплата
