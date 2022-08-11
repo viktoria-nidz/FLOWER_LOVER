@@ -163,16 +163,16 @@ $pastelPinc-color: #d978ac;
     background-color: black;
     box-shadow: 0 0 5px #999;
     left: -2px;
-
     // justify-content: space-around;
     width: 100vw;
     max-width: 100vw;
     min-width: 100vw;
     backdrop-filter: blur(7px);
     box-shadow: 0 0 5px $lightGreeen-color;
+    position: fixed;
     opacity: 0.9;
     height: 80px;
-    z-index: 2000;
+    z-index: 7000;
     padding: 10px;
   }
 }
@@ -191,7 +191,7 @@ $pastelPinc-color: #d978ac;
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
-  z-index: 2999;
+  z-index: 7001;
   &.open {
     display: block;
   }

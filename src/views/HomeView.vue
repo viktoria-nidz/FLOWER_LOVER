@@ -402,6 +402,46 @@
   </main>
 </template>
 
+<style lang="scss" scoped>
+.center_block {
+  position: relative;
+  top: 0;
+  left: 69px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 150px;
+  .first_title_line {
+    // display: flex;
+    position: relative;
+    z-index: 1;
+  }
+  .first_title_line,
+  .second_title_line {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Cormorant";
+    font-weight: 300;
+    font-size: 200px;
+    letter-spacing: 40px;
+    text-transform: uppercase;
+    line-height: 155px;
+    text-align: center;
+  }
+  .second_title_line {
+    margin-bottom: 60px;
+    opacity: 0.95;
+  }
+  .desc {
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding-bottom: 47px;
+  }
+}
+</style>
 <script>
 // @ is an alias to /src
 
