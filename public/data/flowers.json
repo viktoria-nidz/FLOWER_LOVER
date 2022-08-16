@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "show": true,
     "title": "Білі Хризантеми",
     "price": "1169",
     "old_price": "1169",
@@ -16,7 +17,10 @@
     ],
     "images": ["1.1.jpg", "1.2.jpg", "1.3.jpg"],
     "isNew": true,
+
     "isSale": false,
+    "qty": 1,
+
     "params": {
       "color": "білий",
       "format": "у ящику"
@@ -24,6 +28,7 @@
   },
   {
     "id": 2,
+    "show": true,
     "title": "Букет Троянд Ельторо",
     "price": "635",
     "old_price": "745",
@@ -39,6 +44,7 @@
     ],
     "images": ["2.1.jpg", "2.2.jpg", "2.3.jpg"],
     "isNew": false,
+    "qty": 1,
     "isSale": true,
     "params": {
       "color": "червоний",
@@ -47,6 +53,7 @@
   },
   {
     "id": 3,
+    "show": true,
     "title": "Магічна коробка",
     "price": "2000",
     "old_price": "2667",
@@ -69,6 +76,8 @@
     ],
     "images": ["3.1.jpg", "3.2.jpg", "3.3.jpg"],
     "isNew": true,
+
+    "qty": 1,
     "isSale": true,
     "params": {
       "color": "жовтий",
@@ -77,6 +86,7 @@
   },
   {
     "id": 4,
+    "show": true,
     "title": "Рожева Гортензія",
     "price": "369",
     "old_price": "369",
@@ -95,6 +105,7 @@
     ],
     "images": ["4.1.jpg", "4.2.jpg", "4.3.jpg"],
     "isNew": false,
+    "qty": 1,
     "isSale": false,
     "params": {
       "color": "рожевий",
@@ -103,6 +114,7 @@
   },
   {
     "id": 5,
+    "show": true,
     "title": "Чарівні Гортензії",
     "price": "955",
     "old_price": "1199",
@@ -120,6 +132,7 @@
     ],
     "images": ["5.1.jpg", "5.2.jpg", "5.3.jpg"],
     "isNew": false,
+    "qty": 1,
     "isSale": true,
     "params": {
       "color": "білий",
@@ -128,6 +141,7 @@
   },
   {
     "id": 6,
+    "show": true,
     "title": "Весела райдуга",
     "price": "1245",
     "old_price": "1245",
@@ -144,6 +158,7 @@
     ],
     "images": ["6.1.jpg", "6.2.jpg", "6.3.jpg"],
     "isNew": false,
+    "qty": 1,
     "isSale": false,
     "params": {
       "color": "різнобарвний",
@@ -152,6 +167,7 @@
   },
   {
     "id": 7,
+    "show": true,
     "title": "Біло-рожеве диво",
     "price": "1049",
     "old_price": "1499",
@@ -174,6 +190,8 @@
     ],
     "images": ["7.1.jpg", "7.2.jpg", "7.3.jpg"],
     "isNew": true,
+
+    "qty": 1,
     "isSale": true,
     "params": {
       "color": ["білий", "рожевий"],
@@ -182,6 +200,7 @@
   },
   {
     "id": 8,
+    "show": true,
     "title": "Пристрасть у твоїх руках",
     "price": "1049",
     "old_price": "1049",
@@ -199,6 +218,7 @@
     ],
     "images": ["8.1.jpg", "8.2.jpg", "8.3.jpg"],
     "isNew": false,
+    "qty": 1,
     "isSale": false,
     "params": {
       "color": ["білий", "червоний"],
@@ -207,6 +227,7 @@
   },
   {
     "id": 9,
+    "show": true,
     "title": "Мікс яскравих хризантем",
     "price": "1245",
     "old_price": "1245",
@@ -224,6 +245,7 @@
     ],
     "images": ["9.1.jpg", "9.2.jpg", "9.3.jpg"],
     "isNew": false,
+    "qty": 1,
     "isSale": false,
     "params": {
       "color": "різнобарвний",
@@ -232,6 +254,7 @@
   },
   {
     "id": 10,
+    "show": true,
     "title": "Ніжна хмаринка",
     "price": "650",
     "old_price": "650",
@@ -251,6 +274,8 @@
     ],
     "images": ["10.1.jpg", "10.2.jpg", "10.3.jpg"],
     "isNew": true,
+
+    "qty": 1,
     "isSale": false,
     "params": {
       "color": "білий",
@@ -259,6 +284,7 @@
   },
   {
     "id": 11,
+    "show": true,
     "title": "Ніжність",
     "price": "980",
     "old_price": "980",
@@ -275,6 +301,7 @@
     ],
     "images": ["11.1.jpg", "11.2.jpg", "11.3.jpg"],
     "isNew": false,
+    "qty": 1,
     "isSale": false,
     "params": {
       "color": ["білий", "рожевий", "жовтий", "різнобарвний"],
@@ -283,6 +310,7 @@
   },
   {
     "id": 12,
+    "show": true,
     "title": "Коробка 7 Гортензій Мікс",
     "price": "1230",
     "old_price": "1560",
@@ -299,6 +327,8 @@
     ],
     "images": ["12.1.jpg", "12.2.jpg", "12.3.jpg"],
     "isNew": true,
+
+    "qty": 1,
     "isSale": true,
     "params": {
       "color": ["білий", "рожевий", "жовтий", "різнобарвний"],

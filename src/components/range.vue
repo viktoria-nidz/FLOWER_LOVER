@@ -64,6 +64,7 @@ export default {
 
       this.$refs[track].style.left = moveInPct + "%";
       this.setTrackHightlight();
+      this.$emit("change-range", this.minValue, this.maxValue);
     },
     mousedown(ev, track) {
       if (this.isDragging) return;

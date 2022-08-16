@@ -10,4 +10,5 @@ import "./assets/css/hamburgers.min.css";
 import "./assets/scss/hamburgers.scss";
 // App.prototype.$axios = axios;
 // App.use(VueAxios,axios);
+
 createApp(App).use(router).use(router).mount("#app");

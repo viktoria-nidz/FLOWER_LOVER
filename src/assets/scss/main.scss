@@ -140,27 +140,6 @@ h3 {
   width: 100%;
 }
 
-.flower-overlay {
-  width: 100%;
-  background-image: url(../images/firstTO.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 66% 0px;
-  top: 0;
-  left: 0;
-}
-.stains_overlay {
-  background: radial-gradient(
-        $lightGreeen-color 0%,
-        transparent 72%,
-        transparent 100%
-      ) -92px 256px/463.9px 564.05px no-repeat,
-    radial-gradient($pastelPinc-color 0%, transparent 74%, transparent 100%)
-      970px 324px/390px 559px no-repeat;
-  display: flex;
-  margin-bottom: 30px;
-  background-repeat: no-repeat;
-}
 
 .logo_wrap {
   max-width: 34px;

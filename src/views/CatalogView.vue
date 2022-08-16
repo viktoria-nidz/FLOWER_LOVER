@@ -1,8 +1,7 @@
 <template>
-  <div class="flower-overlay">
-    <div class="stains_overlay">
-    <header id="header">
-      <div class="">
+  <div class="stains_overlay">
+    <div class="flower-overlay">
+      <header id="header">
         <div class="container">
           <div class="menu_wrap"></div>
           <div class="right_block">
@@ -62,183 +61,187 @@
             <div class="desc">
               У нашому магазині найбільший вибір квітів для будь-яких подій:
             </div>
-            <div class="marks_list">
-              <button type="button" class="mark">1 Вересня</button>
-              <button type="button" class="mark">8 Березня</button>
-              <button type="button" class="mark">Бабусі</button>
-              <button type="button" class="mark">День народження</button>
-              <button type="button" class="mark">Мамі</button>
-              <button type="button" class="mark">Випускний</button>
-              <button type="button" class="mark">День Святого Валентина</button>
-              <button type="button" class="mark">Коханій</button>
-              <button type="button" class="mark">Комплімент</button>
-              <button type="button" class="mark">Сестрі</button>
-              <button type="button" class="mark">Річниця</button>
-              <button type="button" class="mark">Особлива дата</button>
-              <button type="button" class="mark">Пропозиція</button>
-              <button type="button" class="mark">Подрузі</button>
-            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <main>
-      <section class="flowers_list">
-        <div class="container">
-          <div class="catalog_page_wrap">
-            <div class="filters">
-              <form id="filters_form" @submit.prevent="">
-                <div class="color_filter">
-                  <div class="title_filter">ПО КОЛЬОРУ</div>
-                  <label for="red">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="red"
-                      value="red"
-                    />
-                    <span class="checkmark"></span>
-                    червоний
-                  </label>
-                  <label for="white">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="white"
-                      value="white"
-                    />
-                    <span class="checkmark"></span>
-                    білий
-                  </label>
-                  <label for="yellow">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="yellow"
-                      value="yellow"
-                    />
-                    <span class="checkmark"></span>
-                    жовтий
-                  </label>
-                  <label for="pink">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="pink"
-                      value="pink"
-                    />
-                    <span class="checkmark"></span>
-                    рожевий
-                  </label>
-                  <label for="colorful">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="colorful"
-                      value="colorful"
-                    />
-                    <span class="checkmark"></span>
-                    різнобарвний
-                  </label>
-                </div>
+      <main>
+        <section class="flowers_list">
+          <div class="container">
+            <div class="catalog_page_wrap">
+              <div class="filters">
+                <form id="filters_form" @submit.prevent="">
+                  <div class="color_filter">
+                    <div class="title_filter">ПО КОЛЬОРУ</div>
+                    <label for="red">
+                      <input
+                        v-model="selected.color"
+                        type="checkbox"
+                        id="red"
+                        value="червоний"
+                      />
+                      <span class="checkmark"></span>
+                      червоний
+                    </label>
+                    <label for="white">
+                      <input
+                        v-model="selected.color"
+                        type="checkbox"
+                        id="white"
+                        value="білий"
+                      />
+                      <span class="checkmark"></span>
+                      білий
+                    </label>
+                    <label for="yellow">
+                      <input
+                        v-model="selected.color"
+                        type="checkbox"
+                        id="yellow"
+                        value="жовтий"
+                      />
+                      <span class="checkmark"></span>
+                      жовтий
+                    </label>
+                    <label for="pink">
+                      <input
+                        v-model="selected.color"
+                        type="checkbox"
+                        id="pink"
+                        value="рожевий"
+                      />
+                      <span class="checkmark"></span>
+                      рожевий
+                    </label>
+                    <label for="colorful">
+                      <input
+                        v-model="selected.color"
+                        type="checkbox"
+                        id="colorful"
+                        value="різнобарвний"
+                      />
+                      <span class="checkmark"></span>
+                      різнобарвний
+                    </label>
+                  </div>
 
-                <div class="format_filter">
-                  <div class="title_filter">ПО ФОРМАТУ</div>
-                  <label for="bouquet">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="bouquet"
-                      value="bouquet"
+                  <div class="format_filter">
+                    <div class="title_filter">ПО ФОРМАТУ</div>
+                    <label for="bouquet">
+                      <input
+                        v-model="selected.format"
+                        type="checkbox"
+                        id="bouquet"
+                        value="букет"
+                      />
+                      <span class="checkmark"></span>
+                      букет
+                    </label>
+                    <label for="vase">
+                      <input
+                        v-model="selected.format"
+                        type="checkbox"
+                        id="vase"
+                        value="у вазі"
+                      />
+                      <span class="checkmark"></span>
+                      у вазі
+                    </label>
+                    <label for="woodbox">
+                      <input
+                        v-model="selected.format"
+                        type="checkbox"
+                        id="woodbox"
+                        value="в ящику"
+                      />
+                      <span class="checkmark"></span>
+                      в ящику
+                    </label>
+                    <label for="box">
+                      <input
+                        v-model="selected.format"
+                        type="checkbox"
+                        id="box"
+                        value="у коробці"
+                      />
+                      <span class="checkmark"></span>
+                      у коробці
+                    </label>
+                    <label for="envelope">
+                      <input
+                        v-model="selected.format"
+                        type="checkbox"
+                        id="envelope"
+                        value="у конверті"
+                      />
+                      <span class="checkmark"></span>
+                      у конверті
+                    </label>
+                  </div>
+                  <div class="price_filter">
+                    <div class="title_filter">ВАРТІСТЬ</div>
+                    <price-range-slider
+                      v-model="range"
+                      :trackHeight="0.5"
+                      @changeRange="changeRange"
                     />
-                    <span class="checkmark"></span>
-                    букет
-                  </label>
-                  <label for="vase">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="vase"
-                      value="vase"
-                    />
-                    <span class="checkmark"></span>
-                    у вазі
-                  </label>
-                  <label for="woodbox">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="woodbox"
-                      value="woodbox"
-                    />
-                    <span class="checkmark"></span>
-                    в ящику
-                  </label>
-                  <label for="box">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="box"
-                      value="box"
-                    />
-                    <span class="checkmark"></span>
-                    у коробці
-                  </label>
-                  <label for="envelope">
-                    <input
-                      v-model="checked"
-                      type="checkbox"
-                      id="envelope"
-                      value="envelope"
-                    />
-                    <span class="checkmark"></span>
-                    у конверті
-                  </label>
-                </div>
-                <div class="price_filter">
-                  <div class="title_filter">ВАРТІСТЬ</div>
-                  <price-range-slider v-model="range" :trackHeight="0.5" />
-                </div>
-              </form>
-            </div>
-            <div class="flowers_catalog_items">
-              <div
-                class="flower_item"
-                v-for="(flower, number) in flowers"
-                :key="number"
-              >
-                <div class="flag_wrap" v-if="flower.isSale && flower.isNew">
-                  <div class="sale">SALE</div>
-                  <div class="new">NEW</div>
-                </div>
+                  </div>
+                </form>
+              </div>
+              <div class="flowers_catalog_items">
+                <div
+                  class="flower_item"
+                  v-for="(flower, number) in filteredFlowers"
+                  :key="number"
+                >
+                  <div class="flag_wrap" v-if="flower.isSale && flower.isNew">
+                    <div class="sale">SALE</div>
+                    <div class="new">NEW</div>
+                  </div>
 
-                <div v-else-if="flower.isSale" class="sale">SALE</div>
-                <div v-else-if="flower.isNew" class="new">NEW</div>
+                  <div v-else-if="flower.isSale" class="sale">SALE</div>
+                  <div v-else-if="flower.isNew" class="new">NEW</div>
 
-                <div class="img-wrap">
-                  <img
-                    :src="
-                      require(`@/assets/images/flowers/${flower.images[0]}`)
-                    "
-                    class="card-img-top"
-                    :alt="flower.title"
-                  />
-                </div>
-                <div class="title">{{ flower.title }}</div>
-                <div class="price">
-                  {{ flower.price }} UAN
-                  <span class="old_price" v-if="flower.isSale"
-                    >{{ flower.old_price }} UAN</span
+                  <div class="img-wrap">
+                    <router-link
+                      :to="{ name: 'product-view', params: { id: flower.id } }"
+                    >
+                      <img
+                        :src="
+                          require(`@/assets/images/flowers/${flower.images[0]}`)
+                        "
+                        class="card-img-top"
+                        :alt="flower.title"
+                      />
+                    </router-link>
+                  </div>
+                  <div class="title product">
+                    <router-link
+                      :to="{ name: 'product-view', params: { id: flower.id } }"
+                    >
+                      {{ flower.title }}
+                    </router-link>
+                  </div>
+
+                  <div class="price">
+                    {{ flower.price }} UAN
+                    <span class="old_price" v-if="flower.isSale"
+                      >{{ flower.old_price }} UAN</span
+                    >
+                  </div>
+                  <button
+                    class="transparent_btn"
+                    type="button"
+                    @click="addToCart(flower.id, flower.price, flower.title)"
                   >
+                    У корзину
+                  </button>
                 </div>
-                <button class="transparent_btn" type="button">У корзину</button>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
     </div>
   </div>
 </template>
@@ -246,37 +249,57 @@
 <style lang="scss" scoped>
 $lightGreeen-color: #43ffd2;
 $pastelPinc-color: #d978ac;
-$pastelPinc-colorSpot: #d978ac8b;
+$pastelPinc-colorSpot: #8a10519d;
 $lightGreeen-colorSpot: #43ffd399;
 .social_networks {
   margin-bottom: 44px;
 }
-.flower-overlay,
-.stains_overlay {
-  width: 100%;
-  height: 100%;
-}
+
 #header {
+  padding-top: 10px;
   margin-bottom: 80px;
 }
 .right_block {
-  margin-top: -100px;
+  margin-top: -50px;
 }
 .flower-overlay {
   background-image: url(../assets/images/additional_pages/catalog/hotPinkFlower1.png),
     url(../assets/images/additional_pages/catalog/hotPinkFlower2.png);
   background-size: auto;
   background-repeat: no-repeat;
-  background-position: -510px 178px, 900px -102px;
+  background-position: -300px -80px, 980px -102px;
 }
-// .stains_overlay {
+.stains_overlay {
+  background: radial-gradient(
+        $pastelPinc-colorSpot 0,
+        transparent 70%,
+        transparent 100%
+      ) -303% -596px/737px 527px no-repeat,
+    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 100%)
+      181% 492px/850px 765px no-repeat,
+    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 100%) -64%
+      503px/629px 517px no-repeat,
+    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 100%)
+      181% 492px/805px 725px no-repeat,
+    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 100%) -64%
+      503px/629px 517px no-repeat,
+    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 100%)
+      181% 492px/955px 725px no-repeat,
+    radial-gradient($lightGreeen-colorSpot 0, transparent 76%, transparent 100%) -64%
+      503px/579px 817px no-repeat,
+    radial-gradient($lightGreeen-colorSpot 0, transparent 71%, transparent 100%)
+      181% 492px/605px 725px no-repeat,
+    radial-gradient($lightGreeen-colorSpot 0, transparent 69%, transparent 100%) -64%
+      503px/629px 517px no-repeat;
 
-// }
+  background-position: -20% 197px, 144% -397px, 101% 438px, -25% 571px,
+    -91% 2770px, -29% 2429px, 6% 722px, -21% 2998px, 124% 2719px;
+}
 .center_block {
   max-width: 920px;
   position: flex;
   z-index: 2;
-  margin-top: 150px;
+  margin-top: 100px;
   padding: 20px;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(20px);
@@ -284,57 +307,44 @@ $lightGreeen-colorSpot: #43ffd399;
   .desc {
     text-transform: uppercase;
     font-size: 14px;
-    margin-left: 25vw;
+    margin-left: 9vw;
     font-weight: 400;
     margin-top: 20px;
     max-width: 400px;
-    margin-bottom: 100px;
+    margin-bottom: 38px;
   }
-  .marks_list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: left;
-    gap: 10px;
-    button {
-      &:active {
-        color: #fff;
-        background-color: #7d2253;
-        box-shadow: inset 0px 0px 10px #1b000e;
-      }
-      &:hover {
-        color: #fff;
-        background-color: #7d2253;
-      }
-      border: 1px solid white;
-      color: white;
-      font-family: "Oswald";
-      font-weight: 400;
-      font-size: 12px;
-      letter-spacing: 2px;
-      border-radius: 40px;
-      padding: 11px 16px;
-      text-transform: uppercase;
-      font-weight: normal;
-      background-color: transparent;
-    }
-  }
+
   .second_title_line {
     padding-left: 25vw;
   }
 }
+
 .center_block .first_title_line,
 .center_block .second_title_line {
   font-weight: 400;
-  font-size: 100px;
+  font-size: 130px;
   letter-spacing: 4px;
-  line-height: 101px;
-  text-align: left;
-  justify-content: left;
+  line-height: 140px;
+  text-align: center;
+  justify-content: center;
   align-items: left;
   font-family: "Cormorant";
 }
 .catalog_page_wrap {
+  .title.product a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+      color: $pastelPinc-color;
+    }
+  }
+  .card-img-top {
+    &:hover {
+      cursor: pointer;
+    }
+  }
   #filters_form {
     // CUSTOM RANGE START
     input[type="range"] {
@@ -364,7 +374,8 @@ $lightGreeen-colorSpot: #43ffd399;
 
 // CUSTOM CHECKBOX START
 
-.format_filter {
+.format_filter,
+.marks_list {
       /* Create a custom checkbox */
       .checkmark {
         position: absolute;
@@ -449,8 +460,8 @@ $lightGreeen-colorSpot: #43ffd399;
       }
     }
   }
-
   // CUSTOM CHECKBOX END
+
   .filters {
     .title_filter {
       color: $lightGreeen-color;
@@ -461,7 +472,8 @@ $lightGreeen-colorSpot: #43ffd399;
       flex-direction: column;
       row-gap: 5px;
     }
-
+    max-height: min-content;
+    max-height: 650px;
     max-width: 255px;
     min-width: 255px;
     padding: 20px 16px;
@@ -565,18 +577,115 @@ export default {
   data() {
     return {
       checked: [],
-      filteredFlowers: [],
+      // filteredFlowers: [],
       flowers: [],
+      cart: [],
+      showProduct: false,
       to: 10000,
+      markContainCheck: 0,
       range: "50",
+      selected: {
+        priceFrom: 50,
+        priceTo: 10000,
+        mark: [],
+        format: [],
+        color: [],
+      },
     };
   },
+  computed: {
+    filteredFlowers() {
+      return this.flowers.filter((el) => {
+        if (this.selected.color.length && this.selected.format.length) {
+          return (
+            this.selected.color.includes(el.params.color) &&
+            this.selected.format.includes(el.params.format) &&
+            el.price >= this.selected.priceFrom &&
+            el.price <= this.selected.priceTo
+          );
+        } else if (
+          this.selected.color.length &&
+          this.selected.format.length === 0
+        ) {
+          return (
+            this.selected.color.includes(el.params.color) &&
+            el.price >= this.selected.priceFrom &&
+            el.price <= this.selected.priceTo
+          );
+        } else if (
+          this.selected.color.length === 0 &&
+          this.selected.format.length
+        ) {
+          return (
+            this.selected.format.includes(el.params.format) &&
+            el.price >= this.selected.priceFrom &&
+            el.price <= this.selected.priceTo
+          );
+        } else {
+          return (
+            el.price >= this.selected.priceFrom &&
+            el.price <= this.selected.priceTo
+          );
+        }
+      });
+    },
+  },
+  // add to LOCAL
+  //  localStorage.setItem("products in cart", JSON.stringify(this.cart));
   created() {
     axios.get("data/flowers.json").then((resp) => {
       this.flowers = resp.data;
+      this.cart = JSON.parse(localStorage.getItem("products in cart")) || [];
+      // console.log(this.cart);
     });
   },
+  watch: {
+    selected: {
+      handler: function () {
+        this.sortByMarks();
+      },
+    },
+  },
+  methods: {
+    sortByMarks() {
+      this.checked = this.checked.filter((el) => {
+        return (
+          this.selected.mark.length !== 0 &&
+          this.flowers.mark.includes(el.selected.mark)
+        );
+      });
+    },
+    changeRange(min, max) {
+      this.selected.priceFrom = min;
+      this.selected.priceTo = max;
+    },
+    addToCart(id, price, title) {
+      let qty = 1;
+      if (this.cart.find((el) => el.id === id) === undefined) {
+        this.cart.push({
+          name: title,
+          id: id,
+          qty: qty,
+          isBuy: false,
+          price: price,
+          total: parseFloat((qty * price).toFixed(2)),
+        });
+        localStorage.setItem("products in cart", JSON.stringify(this.cart));
+        this.cart = JSON.parse(localStorage.getItem("products in cart")) || [];
+      } else {
+        if (this.cart.findIndex((el) => el.id === id) !== undefined) {
+          const prodIndex = this.cart.findIndex((el) => el.id === id);
+          const newQty = this.cart[prodIndex].qty + 1;
+          this.cart[prodIndex].qty = newQty;
+          this.cart[prodIndex].total = parseFloat(
+            (newQty * this.cart[prodIndex].price).toFixed(2)
+          );
+        }
 
-  methods: {},
+        localStorage.setItem("products in cart", JSON.stringify(this.cart));
+        this.cart = JSON.parse(localStorage.getItem("products in cart")) || [];
+      }
+    },
+  },
 };
 </script>

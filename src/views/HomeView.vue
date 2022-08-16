@@ -403,6 +403,10 @@
 </template>
 
 <style lang="scss" scoped>
+$lightGreeen-color: #43ffd2;
+$pastelPinc-color: #d978ac;
+$pastelPinc-colorSpot: #d978ac8b;
+$lightGreeen-colorSpot: #43ffd399;
 .center_block {
   position: relative;
   top: 0;
@@ -440,6 +444,28 @@
     text-align: center;
     padding-bottom: 47px;
   }
+}
+
+.flower-overlay {
+  width: 100%;
+  background-image: url(../assets/images/firstTO.png);
+  background-repeat: no-repeat;
+  background-size: c8over;
+  background-position: 66% 0px;
+  top: 0;
+  left: 0;
+}
+.stains_overlay {
+  background: radial-gradient(
+        $lightGreeen-color 0%,
+        transparent 72%,
+        transparent 100%
+      ) -92px 256px/463.9px 564.05px no-repeat,
+    radial-gradient($pastelPinc-color 0%, transparent 74%, transparent 100%)
+      970px 324px/390px 559px no-repeat;
+  display: flex;
+  margin-bottom: 30px;
+  background-repeat: no-repeat;
 }
 </style>
 <script>

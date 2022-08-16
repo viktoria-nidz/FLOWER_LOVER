@@ -8,6 +8,7 @@
 import MainHeader from "@/components/mainHeader.vue";
 import MainFooter from "@/components/mainFooter.vue";
 export default {
+  
   components: {
     MainHeader,
     MainFooter,
