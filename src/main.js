@@ -2,6 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
 // import VueAxios from "vue-axios";
+
 import "./assets/scss/main.scss";
 import "./assets/scss/payment_success.scss";
 import "./assets/css/fonts.css";

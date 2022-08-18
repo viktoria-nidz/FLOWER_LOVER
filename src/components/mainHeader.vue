@@ -147,7 +147,7 @@
             >
           </div>
           <button @click="toggleCart()" class="cart" type="button">
-            <div class="product_qty">{{ this.inCart }}</div>
+            <div class="product_qty">{{ this.newQty }}</div>
             <span class="icon-shopping-bag"></span>
           </button>
         </div>
@@ -160,7 +160,9 @@
         <div @click="toggleCart()" class="close"></div>
       </div>
       <div class="cart_body">
-        <div class="cart_item" v-for="flower in cart" :key="flower">
+        <cartItem />
+        <div class="cart_item">
+          <!-- <div class="cart_item" v-for="flower in cart" :key="flower">
           <div class="center_block">
             <img
               :src="require(`@/assets/images/flowers/${flower.id}.1.jpg`)"
@@ -190,29 +192,35 @@
                 </button>
               </div>
             </div>
-          </div>
-          <div class="total_block">
-            <div class="price_item">{{ flower.total }} UAN</div>
-            <button
-              type="button"
-              class="delete_btn"
-              @click="askProdDel(flower.id)"
-            >
-              видалити
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="cart_footer">
-        <div class="to_pay">До сплати: {{ this.total }} UAN</div>
-        <div class="warning">
-          Щоб дізнатися про вартість доставки, перейдіть до оформлення
-          замовлення.
-        </div>
+          </div> -->
 
-        <button class="transparent_btn btn_pay" type="button">
-          Оформити замовленння
-        </button>
+          <!-- <div class="total_block">
+          <div class="price_item">{{ flower.total }} UAN</div>
+          <button
+            type="button"
+            class="delete_btn"
+            @click="askProdDel(flower.id)"
+          >
+            видалити
+          </button>
+        </div> -->
+          <!-- </div>
+    </div>
+    <div class="cart_footer">
+      <div class="to_pay">До сплати: {{ this.total }} UAN</div>
+      <div class="warning">
+       Вартість з доставкою відображується при оформленні замовлення.
+      </div> -->
+        </div>
+        <router-link to="/PlacingOrder">
+          <button
+            class="transparent_btn btn_pay"
+            @click="toggleCart()"
+            type="button"
+          >
+            Оформити замовленння
+          </button>
+        </router-link>
       </div>
     </div>
     <!-- CART BLOCK END -->
@@ -305,6 +313,10 @@ $pastelPinc-color: #d978ac;
   }
 }
 
+#header {
+  margin: 0;
+  padding: 0;
+}
 #header.ad_page #side-block .menu_wrap ul {
   min-width: 130px;
 }
@@ -599,14 +611,18 @@ $pastelPinc-color: #d978ac;
 <script>
 // import {  } from "@babel/types";
 import axios from "axios";
+import cartItem from "@/components/cartItem.vue";
 
 export default {
   name: "MainHeader",
+  components: {
+    cartItem,
+  },
   data() {
     return {
       cart: [],
-      newQty: 1,
       flower: [],
+      newQtyItem: 0,
     };
   },
   created() {
@@ -618,10 +634,9 @@ export default {
   },
 
   computed: {
-    // showQty() {
-    //   this.addToCart();
-    //   return this.cart.length;
-    // },
+    newQty() {
+      return this.cart.length;
+    },
     total() {
       let sum = 0;
       this.cart.forEach((element) => {
@@ -629,38 +644,25 @@ export default {
       });
       return sum;
     },
-    inCart() {
-      return this.cart.length;
-    },
   },
   methods: {
-    // calculateTotal() {
-    //   console.log("CALLCULAAATE TIME");
-    //   console.log(typeof this.cart);
-
-    //   for (let i = 0; i <= Object.keys(this.cart).length; i++) {
-    //     console.log(this.cart[i].total);
-    //     this.total += this.cart[i].total;
-
-    //   }
-    //   console.log(this.total);
-    // },
     changeProductQty(id, action) {
       const index = this.flowers.findIndex((el) => el.id === id);
       const indexCart = this.cart.findIndex((el) => el.id === id);
       if (this.flowers[index].id === id) {
         if (action === "inc") {
-          this.newQty = this.flowers[index].qty + 1;
+          this.newQtyItem = this.flowers[index].qty + 1;
         } else {
           if (this.flowers[index].qty >= 2) {
-            this.newQty = this.flowers[index].qty - 1;
+            this.newQtyItem = this.flowers[index].qty - 1;
           } else {
             return false;
           }
         }
-        this.flowers[index].qty = this.newQty;
-        this.cart[indexCart].qty = this.newQty;
-        this.cart[indexCart].total = this.cart[indexCart].price * this.newQty;
+        this.flowers[index].qty = this.newQtyItem;
+        this.cart[indexCart].qty = this.newQtyItem;
+        this.cart[indexCart].total =
+          this.cart[indexCart].price * this.newQtyItem;
         // this.calculateTotal();
         localStorage.setItem("products in cart", JSON.stringify(this.cart));
       }
@@ -673,7 +675,6 @@ export default {
     },
     addToCart() {
       this.cart = JSON.parse(localStorage.getItem("products in cart")) || [];
-      return this.cart.length;
     },
     fixedHeader() {
       if (window.scrollY > 90) {

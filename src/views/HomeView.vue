@@ -305,36 +305,7 @@
                 замовлення або скаргу через форму зворотного зв'язку, і наш
                 спеціаліст зв'яжеться з вами протягом 15 хвилин.
               </p>
-
-              <form method="post" action="#" enctype="multipart/form-data">
-                <input
-                  type="text"
-                  name="full_name"
-                  id="form_name"
-                  class="form_input name"
-                  placeholder="Ваше ім'я"
-                  required
-                />
-                <input
-                  type="tel"
-                  name="tel"
-                  id="form_phone"
-                  class="form_input phone"
-                  placeholder="+380 73 087 21 16"
-                  required
-                />
-                <textarea
-                  cols="30"
-                  rows="5"
-                  class="form_input massage"
-                  placeholder="Ваш коментар"
-                  required
-                  id="form_massage"
-                ></textarea>
-                <button type="submit" class="standart_green_btn submit">
-                  Відправити
-                </button>
-              </form>
+              <smallForm />
               <div class="sup_inst_wrap">
                 <p class="sup_instr">
                   Натискаючи на кнопку «Надіслати», я даю свою згоду на обробку
@@ -407,6 +378,9 @@ $lightGreeen-color: #43ffd2;
 $pastelPinc-color: #d978ac;
 $pastelPinc-colorSpot: #d978ac8b;
 $lightGreeen-colorSpot: #43ffd399;
+input:-internal-autofill-selected {
+  background-color: transparent !important;
+}
 .center_block {
   position: relative;
   top: 0;
@@ -438,19 +412,13 @@ $lightGreeen-colorSpot: #43ffd399;
     margin-bottom: 60px;
     opacity: 0.95;
   }
-  .desc {
-    font-size: 20px;
-    letter-spacing: 1px;
-    text-align: center;
-    padding-bottom: 47px;
-  }
 }
 
 .flower-overlay {
   width: 100%;
   background-image: url(../assets/images/firstTO.png);
   background-repeat: no-repeat;
-  background-size: c8over;
+  background-size: cover;
   background-position: 66% 0px;
   top: 0;
   left: 0;
@@ -470,9 +438,12 @@ $lightGreeen-colorSpot: #43ffd399;
 </style>
 <script>
 // @ is an alias to /src
-
+import smallForm from "@/components/smallForm.vue";
 export default {
   name: "HomeView",
-  components: {},
+  components: {
+    smallForm,
+  },
+  data() {},
 };
 </script>

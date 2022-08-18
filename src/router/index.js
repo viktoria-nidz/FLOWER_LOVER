@@ -22,6 +22,11 @@ const routes = [
     component: () => import("../views/ProductView.vue"),
   },
   {
+    path: "/PlacingOrder",
+    name: "placing-order",
+    component: () => import("../views/PlacingOrder.vue"),
+  },
+  {
     path: "/ContactsView",
     name: "contacts-view",
 
@@ -51,6 +56,11 @@ const routes = [
     path: "/PaymentSuccessView",
     name: "payment-success-view",
     component: () => import("../views/PaymentSuccessView"),
+  },
+  {
+    path: "/PaymentProcess",
+    name: "payment-process",
+    component: () => import("../views/PaymentProcess"),
   },
 ];
 

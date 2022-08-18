@@ -1,33 +1,4 @@
 <template>
-  <header id="header" class="ad_page">
-    <div class="container">
-      <div class="menu_wrap">
-        <div class="logo_wrap">
-          <a href="#"
-            ><img class="logo" src="../assets/images/logo.svg" alt="logo"
-          /></a>
-        </div>
-        <ul>
-          <li><a href="">Каталог</a></li>
-          <li><a href="">Доставка і оплата </a></li>
-          <li><a href="">Про нас</a></li>
-          <li><a href="">Контакти</a></li>
-          <li><a href="">FAQ</a></li>
-        </ul>
-
-        <div class="right_block_menu">
-          <div class="tel_wrap">
-            <a href="tel:+375 (29) 113-69-69">
-              <span class="icon-phone"></span> +375 (29) 113-69-69</a
-            >
-          </div>
-          <button class="cart" type="button">
-            <span class="icon-shopping-bag"></span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
   <main>
     <section class="success_pay">
       <div class="spots">
@@ -52,37 +23,120 @@
 <script>
 export default { name: "PaymentSuccessView" };
 </script>
-// PAYMENT_SUCCESS PAGE #header { padding-bottom: 1px; margin-bottom: 73px; }
-.menu_wrap { max-width: 1107px; } .right_block_menu { padding-top: 8px; display:
-flex; padding-left: 153px; .tel_wrap { padding-right: 21px; align-self: center;
-padding-top: 12px; } } .cart { &:hover { cursor: pointer; color:
-$lightGreeen-color; } } .success_pay { text-transform: uppercase;
-letter-spacing: 1px; // position: relative; z-index: 0; background-image:
-url(../assets/images/additional_pages/payment_success/flowerback.png);
-background-repeat: no-repeat; background-position: 101% 267px; .spots {
-position: relative; z-index: -1; background: radial-gradient(
-$lightGreeen-colorSpot 0, transparent 70%, transparent 100% ) -23% -124px/532px
-427px no-repeat, radial-gradient( $pastelPinc-colorSpot 0, transparent 71%,
-transparent 100% ) -24% 596px/605px 725px no-repeat, radial-gradient(
-$pastelPinc-colorSpot 0, transparent 69%, transparent 100% ) 141% -147px/666px
-517px no-repeat, radial-gradient( $lightGreeen-colorSpot 0, transparent 72%,
-transparent 100% ) 79% 619px/664px 517px no-repeat; } .message_block {
-padding-bottom: 408px; margin-left: 160px; .to_main { color: $lightGreeen-color;
-text-transform: uppercase; font-weight: 700; &:hover, &:active { cursor:
-pointer; text-decoration: none; } } line-height: 21px; max-width: 400px;
-.order_num { padding-bottom: 20px; } .message { padding-bottom: 61px; div {
-padding-bottom: 4px; } } } h3 { padding-top: 113px; padding-bottom: 30px;
-position: relative; span { padding-left: 42%; &::before { content: ""; width:
-349px; height: 1px; position: absolute; top: 263px; left: 159px;
-background-color: $pastelPinc-color; } } } } #footer { padding-top: 25px; } //
-PAYMENT_SUCCESS PAGE END
 
 <style lang="scss" scoped>
 $lightGreeen-color: #43ffd2;
 $pastelPinc-color: #d978ac;
 $pastelPinc-colorSpot: #d978ac8b;
 $lightGreeen-colorSpot: #43ffd399;
+// PAYMENT_SUCCESS PAGE #header { padding-bottom: 1px; margin-bottom: 73px; }
 
+.menu_wrap {
+  max-width: 1107px;
+}
+.right_block_menu {
+  padding-top: 8px;
+  display: flex;
+  padding-left: 153px;
+  .tel_wrap {
+    padding-right: 21px;
+    align-self: center;
+    padding-top: 12px;
+  }
+}
+.cart {
+  &:hover {
+    cursor: pointer;
+    color: $lightGreeen-color;
+  }
+}
+.success_pay {
+  text-transform: uppercase;
+  letter-spacing: 1px; // position: relative; z-index: 0;
+  background-image: url(../assets/images/additional_pages/payment_success/flowerback.png);
+  background-repeat: no-repeat;
+  background-position: 101% 267px;
+  .spots {
+    // position: relative;
+    // z-index: -1;
+    background: radial-gradient(
+          $lightGreeen-colorSpot 0,
+          transparent 70%,
+          transparent 100%
+        ) -23% -124px/532px 427px no-repeat,
+      radial-gradient(
+          $pastelPinc-colorSpot 0,
+          transparent 71%,
+          transparent 100%
+        ) -24% 596px/605px 725px no-repeat,
+      radial-gradient(
+          $pastelPinc-colorSpot 0,
+          transparent 69%,
+          transparent 100%
+        )
+        141% -147px/666px 517px no-repeat,
+      radial-gradient(
+          $lightGreeen-colorSpot 0,
+          transparent 72%,
+          transparent 100%
+        )
+        79% 619px/664px 517px no-repeat;
+  }
+  .message_block {
+    padding-bottom: 408px;
+    margin-left: 160px;
+    .to_main {
+      color: $lightGreeen-color;
+      text-transform: uppercase;
+      font-weight: 700;
+      &:hover,
+      &:active {
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+    line-height: 21px;
+    max-width: 400px;
+    .order_num {
+      padding-bottom: 20px;
+    }
+    .message {
+      padding-bottom: 61px;
+      div {
+        padding-bottom: 4px;
+      }
+    }
+  }
+  h3 {
+    padding-top: 113px;
+    padding-bottom: 30px;
+    position: relative;
+    span {
+      padding-left: 42%;
+      &::before {
+        content: "";
+        width: 349px;
+        height: 1px;
+        position: absolute;
+        top: 263px;
+        left: 159px;
+        background-color: $pastelPinc-color;
+      }
+    }
+  }
+}
+#footer {
+  padding-top: 25px;
+}
+.message_block {
+  &:hover {
+    cursor: pointer;
+  }
+  position: relative;
+  z-index: 2;
+}
+
+//PAYMENT_SUCCESS PAGE END
 // PAYMENT SUCCESS PAGE  RESPONSIVE START
 @media screen and (max-width: 1215px) {
   .success_pay {

@@ -34,35 +34,7 @@
                   спеціаліст зв'яжеться з вами протягом 15 хвилин.
                 </p>
 
-                <form method="post" action="#" enctype="multipart/form-data">
-                  <input
-                    type="text"
-                    name="full_name"
-                    id="form_name"
-                    class="form_input name"
-                    placeholder="Ваше ім'я"
-                    required
-                  />
-                  <input
-                    type="tel"
-                    name="tel"
-                    id="form_phone"
-                    class="form_input phone"
-                    placeholder="+380 73 087 21 16"
-                    required
-                  />
-                  <textarea
-                    cols="30"
-                    rows="5"
-                    class="form_input massage"
-                    placeholder="Ваш коментар"
-                    required
-                    id="form_massage"
-                  ></textarea>
-                  <button type="submit" class="standart_green_btn submit">
-                    Відправити
-                  </button>
-                </form>
+                <smallForm />
                 <div class="sup_inst_wrap">
                   <p class="sup_instr">
                     Натискаючи на кнопку «Надіслати», я даю свою згоду на
@@ -96,7 +68,13 @@
 </template>
 
 <script>
-export default { name: "ContactsView" };
+import smallForm from "@/components/smallForm.vue";
+export default {
+  name: "ContactsView",
+  components: {
+    smallForm,
+  },
+};
 </script>
 
 <style lang="scss" scoped>

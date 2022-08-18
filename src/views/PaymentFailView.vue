@@ -8,9 +8,12 @@
             <div class="error">Виникла помилка....</div>
             <div class="message">Спробуйте сплатити ще раз!</div>
             <div class="buttons">
-              <button class="standart_green_btn" type="button">
-                Сплатити ще раз
-              </button>
+              <router-link to="/PaymentProcess">
+                <button class="standart_green_btn" type="button">
+                  Сплатити ще раз
+                </button>
+              </router-link>
+
               <router-link class="to_main" to="/"
                 >Повернутися на головну</router-link
               >
