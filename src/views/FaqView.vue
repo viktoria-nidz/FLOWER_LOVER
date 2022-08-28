@@ -84,23 +84,23 @@ $lightGreeen-colorSpot: #43ffd399;
       radial-gradient(
           rgba(61, 82, 121, 0.5) 0,
           transparent 69%,
-          transparent 100%
+          transparent 50%
         ) -64% 503px/629px 517px no-repeat,
       radial-gradient(
           rgba(61, 82, 121, 0.5) 0,
           transparent 71%,
-          transparent 100%
+          transparent 50%
         )
         181% 492px/605px 725px no-repeat,
       radial-gradient(
           rgba(61, 82, 121, 0.5) 0,
           transparent 69%,
-          transparent 100%
+          transparent 50%
         ) -64% 503px/629px 517px no-repeat,
       radial-gradient(
           rgba(61, 82, 121, 0.5) 0,
           transparent 71%,
-          transparent 100%
+          transparent 50%
         )
         181% 492px/605px 725px no-repeat;
 

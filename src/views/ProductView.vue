@@ -61,7 +61,7 @@
                     <button
                       class="transparent_btn"
                       type="button"
-                      @click="ToCart(flower.id, flower.price, flower.title)"
+                      @click="addToCartx(flower.id, flower.price, flower.title)"
                     >
                       У корзину
                     </button>
@@ -182,42 +182,8 @@
           </div>
           <div class="slider_wrape">
             <div class="container">
-              <div class="sub_text">Вам також може сподобатись:</div>
-
-              <div class="popular_slider_wrapper">
-                <div class="arrow-left"></div>
-                <div class="flower_card">
-                  <img src="../assets/images/special_1.jpg" alt="" />
-                  <div class="bouquet_name">найкращий з усіх</div>
-                  <div class="price">628 UAN</div>
-                  <button class="transparent_btn" type="button">
-                    У корзину
-                  </button>
-                </div>
-
-                <div class="flower_card">
-                  <img src="../assets/images/special_1.jpg" alt="" />
-                  <div class="bouquet_name">найкращий з усіх</div>
-                  <div class="price">628 UAN</div>
-                  <button class="transparent_btn" type="button">
-                    У корзину
-                  </button>
-                </div>
-
-                <div class="flower_card">
-                  <img src="../assets/images/special_1.jpg" alt="" />
-                  <div class="bouquet_name">найкращий з усіх</div>
-                  <div class="price">628 UAN</div>
-                  <button class="transparent_btn" type="button">
-                    У корзину
-                  </button>
-                </div>
-                <div class="arrow-right"></div>
-              </div>
-
-              <button class="watch_catalog_btn" type="button">
-                Дивитись увесь каталог
-              </button>
+              <div class="title">Вас також можуть зацікавити:</div>
+              <sliderFavourite />
             </div>
           </div>
         </div>
@@ -233,6 +199,9 @@ $pastelPinc-colorSpot: #d978ac8b;
 $lightGreeen-colorSpot: #43ffd399;
 // PRODUCT PAGE START
 .product_page {
+  .slider_wrape {
+    padding-bottom: 150px;
+  }
   .btns_wrap {
     display: flex;
     flex-direction: row;
@@ -390,51 +359,33 @@ $lightGreeen-colorSpot: #43ffd399;
     background: radial-gradient(
           $pastelPinc-colorSpot 0,
           transparent 70%,
-          transparent 100%
+          transparent 52%
         ) -303% -596px/737px 527px no-repeat,
-      radial-gradient(
-          $pastelPinc-colorSpot 0,
-          transparent 71%,
-          transparent 100%
-        )
+      radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 52%)
         181% 492px/850px 765px no-repeat,
-      radial-gradient(
-          $pastelPinc-colorSpot 0,
-          transparent 69%,
-          transparent 100%
-        ) -64% 503px/629px 517px no-repeat,
-      radial-gradient(
-          $pastelPinc-colorSpot 0,
-          transparent 71%,
-          transparent 100%
-        )
+      radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 52%) -64%
+        503px/629px 517px no-repeat,
+      radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 52%)
         181% 492px/805px 725px no-repeat,
-      radial-gradient(
-          $pastelPinc-colorSpot 0,
-          transparent 69%,
-          transparent 100%
-        ) -64% 503px/629px 517px no-repeat,
-      radial-gradient(
-          $pastelPinc-colorSpot 0,
-          transparent 71%,
-          transparent 100%
-        )
+      radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 52%) -64%
+        503px/629px 517px no-repeat,
+      radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 52%)
         181% 492px/955px 725px no-repeat,
       radial-gradient(
           $lightGreeen-colorSpot 0,
           transparent 76%,
-          transparent 100%
+          transparent 52%
         ) -64% 503px/579px 817px no-repeat,
       radial-gradient(
           $lightGreeen-colorSpot 0,
           transparent 71%,
-          transparent 100%
+          transparent 52%
         )
         181% 492px/605px 725px no-repeat,
       radial-gradient(
           $lightGreeen-colorSpot 0,
           transparent 69%,
-          transparent 100%
+          transparent 52%
         ) -64% 503px/629px 517px no-repeat;
 
     background-position: -20% 197px, 144% -397px, 101% 438px, -25% 571px,
@@ -613,7 +564,23 @@ $lightGreeen-colorSpot: #43ffd399;
 
 // PRODUCT PAGE RESPONSIVE
 
+@media screen and (max-width: 1377px) {
+  .carousel__prev::before,
+  .carousel__next::before {
+    width: 40px;
+    left: -35px;
+  }
+
+  .carousel__prev::after {
+    content: "";
+    left: -41px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
+  .how_to_order .steps_wrap::before {
+    right: 25px;
+  }
   .deliv_paym {
     .paym_methods .methods_wrap .method {
       font-size: 17px;
@@ -640,7 +607,8 @@ $lightGreeen-colorSpot: #43ffd399;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 907px) {
+ 
   .deliv_paym {
     .flowers {
       background-position: -88% 1272px, -200% 67px, 403% 1244px;
@@ -653,6 +621,13 @@ $lightGreeen-colorSpot: #43ffd399;
 }
 
 @media screen and (max-width: 800px) {
+  .how_to_order {
+    h3 {
+      padding-left: 51px;
+      padding-bottom: 63px;
+      font-size: 40px;
+    }
+  }
   .deliv_paym {
     .spots {
       background-position: -37% -278px, 12% 206px, 103% 167px, -31% 2323px,
@@ -755,7 +730,7 @@ $lightGreeen-colorSpot: #43ffd399;
 
 <script>
 import axios from "axios";
-
+import sliderFavourite from "@/components/sliderFavourite.vue";
 export default {
   name: "ProductView",
 
@@ -767,6 +742,10 @@ export default {
       cart: [],
       newQty: 1,
     };
+  },
+
+  components: {
+    sliderFavourite,
   },
 
   created() {

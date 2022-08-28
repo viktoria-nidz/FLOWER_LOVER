@@ -49,19 +49,12 @@ $lightGreeen-colorSpot: #43ffd399;
     background: radial-gradient(
           $pastelPinc-colorSpot 0,
           transparent 71%,
-          transparent 100%
+          transparent 50%
         )
         123% -456px/605px 725px no-repeat,
-      radial-gradient(
-          $pastelPinc-colorSpot 0,
-          transparent 67%,
-          transparent 100%
-        ) -34% 640px/629px 517px no-repeat,
-      radial-gradient(
-          $pastelPinc-colorSpot 0,
-          transparent 72%,
-          transparent 100%
-        )
+      radial-gradient($pastelPinc-colorSpot 0, transparent 67%, transparent 50%) -34%
+        640px/629px 517px no-repeat,
+      radial-gradient($pastelPinc-colorSpot 0, transparent 72%, transparent 50%)
         116% 515px/605px 725px no-repeat;
   }
   text-transform: uppercase;
@@ -122,11 +115,11 @@ $lightGreeen-colorSpot: #43ffd399;
 @media screen and (max-width: 1040px) {
   .fail_payment {
     .spots {
-      background: radial-gradient(#d978ac 0, transparent 71%, transparent 100%)
+      background: radial-gradient(#d978ac 0, transparent 71%, transparent 50%)
           71% -412px/466px 725px no-repeat,
-        radial-gradient(#d978ac 0, transparent 69%, transparent 100%) -94% 644px/483px
+        radial-gradient(#d978ac 0, transparent 69%, transparent 50%) -94% 644px/483px
           517px no-repeat,
-        radial-gradient(#d978ac 0, transparent 72%, transparent 100%) 170% 448px/540px
+        radial-gradient(#d978ac 0, transparent 72%, transparent 50%) 170% 448px/540px
           725px no-repeat;
     }
   }

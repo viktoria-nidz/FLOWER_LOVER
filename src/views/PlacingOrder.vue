@@ -236,7 +236,6 @@
                 <div class="to_pay title_main">
                   Загальна сума замовлення: {{ this.total }} UAN
                 </div>
-               
 
                 <button
                   type="submit"
@@ -460,23 +459,23 @@ input:hover {
   background: radial-gradient(
         $pastelPinc-colorSpot 0,
         transparent 70%,
-        transparent 100%
+        transparent 52%
       ) -303% -596px/737px 527px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 100%)
+    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 52%)
       181% 492px/850px 765px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 100%) -64%
+    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 52%) -64%
       503px/629px 517px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 100%)
+    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 52%)
       181% 492px/805px 725px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 100%) -64%
+    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 52%) -64%
       503px/629px 517px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 100%)
+    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 52%)
       181% 492px/955px 725px no-repeat,
-    radial-gradient($lightGreeen-colorSpot 0, transparent 76%, transparent 100%) -64%
+    radial-gradient($lightGreeen-colorSpot 0, transparent 76%, transparent 52%) -64%
       503px/579px 817px no-repeat,
-    radial-gradient($lightGreeen-colorSpot 0, transparent 71%, transparent 100%)
+    radial-gradient($lightGreeen-colorSpot 0, transparent 71%, transparent 52%)
       181% 492px/605px 725px no-repeat,
-    radial-gradient($lightGreeen-colorSpot 0, transparent 69%, transparent 100%) -64%
+    radial-gradient($lightGreeen-colorSpot 0, transparent 69%, transparent 52%) -64%
       503px/629px 517px no-repeat;
 
   background-position: -20% 197px, 144% -397px, 101% 438px, -34% 1000px,

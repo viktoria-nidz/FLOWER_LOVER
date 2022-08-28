@@ -62,23 +62,23 @@ $lightGreeen-colorSpot: #43ffd399;
     background: radial-gradient(
           $lightGreeen-colorSpot 0,
           transparent 70%,
-          transparent 100%
+          transparent 52%
         ) -23% -124px/532px 427px no-repeat,
       radial-gradient(
           $pastelPinc-colorSpot 0,
           transparent 71%,
-          transparent 100%
+          transparent 52%
         ) -24% 596px/605px 725px no-repeat,
       radial-gradient(
           $pastelPinc-colorSpot 0,
           transparent 69%,
-          transparent 100%
+          transparent 52%
         )
         141% -147px/666px 517px no-repeat,
       radial-gradient(
           $lightGreeen-colorSpot 0,
           transparent 72%,
-          transparent 100%
+          transparent 52%
         )
         79% 619px/664px 517px no-repeat;
   }

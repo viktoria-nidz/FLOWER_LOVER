@@ -47,11 +47,8 @@
       </ul>
       <div class="col_5">
         <div class="mail_wrap">
-          <router-link
-            to=""
-            class="bigger link"
-            href="mailto:zakaz@loverflower.by"
-            >zakaz@loverflower.by</router-link
+          <a to="" class="bigger link" href="mailto:zakaz@loverflower.by"
+            >zakaz@loverflower.by</a
           >
           <div class="smaller">Доставка 24/7 по домовленості с оператором</div>
         </div>
@@ -61,15 +58,15 @@
           <div class="schedule smaller">без вихідний</div>
         </div>
         <div class="tel_wrap">
-          <router-link to="" class="bigger" href="tel:+375 (29) 113-69-69"
-            >+375 (29) 113-69-69</router-link
+          <a to="" class="bigger" href="tel:+375 (29) 113-69-69"
+            >+375 (29) 113-69-69</a
           >
           <div class="smaller">Прийом дзвінків цілодобово</div>
         </div>
         <div class="social_wrap">
           <ul class="social_networks">
             <li>
-              <router-link
+              <a
                 to=""
                 title="instagram"
                 href="https://www.instagram.com/"
@@ -77,10 +74,10 @@
                 rel="noopenner noreferrer"
               >
                 <span class="icon-instagram"></span>
-              </router-link>
+              </a>
             </li>
             <li>
-              <router-link
+              <a
                 to=""
                 title="whatsapp"
                 href="https://www.whatsapp.com/?lang=uk"
@@ -88,11 +85,11 @@
                 rel="noopenner noreferrer"
               >
                 <span class="icon-whatsapp"></span>
-              </router-link>
+              </a>
             </li>
 
             <li>
-              <router-link
+              <a
                 to=""
                 title="viber"
                 href="https://www.viber.com/en/"
@@ -100,7 +97,7 @@
                 rel="noopenner noreferrer"
               >
                 <span class="icon-viber"></span>
-              </router-link>
+              </a>
             </li>
           </ul>
         </div>

@@ -24,26 +24,23 @@
 
         <ul class="mobile">
           <li><router-link to="/CatalogView">Каталог</router-link></li>
-          <li @click="toggleMenu">
+          <li>
             <router-link to="/DeliveryPaymentView"
               >Доставка і оплата
             </router-link>
           </li>
-          <li @click="toggleMenu">
+          <li>
             <router-link to="/AboutView">Про нас</router-link>
           </li>
-          <li @click="toggleMenu">
+          <li>
             <router-link to="/ContactsView">Контакти</router-link>
           </li>
-          <li @click="toggleMenu">
+          <li>
             <router-link to="/FaqView">FAQ </router-link>
           </li>
         </ul>
         <div class="mail_wrap">
-          <router-link
-            @click="toggleMenu"
-            to="mailto:zakaz@loverflower.by"
-            class="bigger link"
+          <router-link to="mailto:zakaz@loverflower.by" class="bigger link"
             >zakaz@loverflower.by</router-link
           >
           <div class="smaller">Доставка 24/7 по домовленості с оператором</div>
@@ -59,7 +56,6 @@
           <ul class="social_networks">
             <li>
               <router-link
-                @click="toggleMenu"
                 to="https://www.instagram.com/"
                 title="instagram"
                 target="_blank"
@@ -70,7 +66,6 @@
             </li>
             <li>
               <router-link
-                @click="toggleMenu"
                 to="https://www.whatsapp.com/?lang=uk"
                 title="whatsapp"
                 target="_blank"
@@ -82,7 +77,6 @@
 
             <li>
               <router-link
-                @click="toggleMenu"
                 to="https://www.viber.com/en/"
                 title="viber"
                 target="_blank"
@@ -93,11 +87,12 @@
             </li>
           </ul>
         </div>
-        <div class="green_text">Реквізити</div>
+        <!-- <div class="green_text">Реквізити</div>
         <div class="adress">
           ТОВ "Ловефлове" 220035, Україна, м.Київ, вул. Тимірязєва буд. 67,
           кімн. 112 (прим.11) УНП 193263781, р/р BY55MTBK3012000109
         </div>
+      </div> -->
       </div>
     </div>
     <!-- MOBILE MENU END -->
@@ -107,7 +102,7 @@
           <button
             class="hamburger hamburger--elastic"
             type="button"
-            @click="toggleMenu"
+            @click="toggleMenu()"
           >
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
@@ -115,7 +110,8 @@
           </button>
         </div>
         <h5>LOVER FLOWER</h5>
-        <button class="cart" type="button">
+        <button @click="toggleCart()" class="cart" type="button">
+          <div class="product_qty">{{ this.newQty }}</div>
           <span class="icon-shopping-bag"></span>
         </button>
       </div>
@@ -142,8 +138,8 @@
 
         <div class="right_block_menu">
           <div class="tel_wrap">
-            <router-link to="tel:+375 (29) 113-69-69">
-              <span class="icon-phone"></span> +375 (29) 113-69-69</router-link
+            <a href="tel:+375 (29) 113-69-69">
+              <span class="icon-phone"></span> +375 (29) 113-69-69</a
             >
           </div>
           <button @click="toggleCart()" class="cart" type="button">
@@ -278,7 +274,7 @@ $pastelPinc-color: #d978ac;
   &.fixed {
     background-color: black;
     box-shadow: 0 0 5px #999;
-    left: -2px;
+    left: 0;
     // justify-content: space-around;
     width: 100vw;
     max-width: 100vw;
@@ -289,7 +285,7 @@ $pastelPinc-color: #d978ac;
     opacity: 0.9;
     height: 80px;
     z-index: 7000;
-    padding: 10px;
+    padding: 6px 120px;
   }
 }
 .menu_wrap.mobile-version {
@@ -438,8 +434,8 @@ $pastelPinc-color: #d978ac;
     }
   }
 
-  width: 25vw;
-  min-width: 400px;
+  width: 350px;
+  min-width: 320px;
   position: fixed;
   right: 0;
   top: 0;
@@ -449,9 +445,9 @@ $pastelPinc-color: #d978ac;
   height: 100vh;
   overflow: scroll;
   z-index: 3000;
-  -webkit-transform: translateX(25vw);
-  -ms-transform: translateX(25vw);
-  transform: translateX(25vw);
+  -webkit-transform: translateX(350px);
+  -ms-transform: translateX(350px);
+  transform: translateX(350px);
   -webkit-transition: all 0.7s ease;
   -o-transition: all 0.7s ease;
   transition: all 0.7s ease;
@@ -562,6 +558,11 @@ $pastelPinc-color: #d978ac;
 }
 
 @media screen and (max-width: 700px) {
+  .about_catalog_page .first_line .catalog_desc {
+    min-width: 429px;
+    max-width: 500px;
+    width: 500px;
+  }
   .menu_wrap {
     display: none;
   }
@@ -581,7 +582,7 @@ $pastelPinc-color: #d978ac;
     max-width: 100vw;
     min-width: 100vw;
     max-width: 90vw;
-    gap: 100px;
+    gap: 25px;
     align-items: center;
     justify-content: space-between;
     &.fixed {

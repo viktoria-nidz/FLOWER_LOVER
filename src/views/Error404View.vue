@@ -36,11 +36,11 @@ $lightGreeen-colorSpot: #43ffd399;
   background: radial-gradient(
         rgba(22, 61, 143, 0.5) 0,
         transparent 70%,
-        transparent 100%
+        transparent 52%
       ) -303% -596px/700px 427px no-repeat,
-    radial-gradient(rgba(22, 61, 143, 0.5) 0, transparent 71%, transparent 100%)
+    radial-gradient(rgba(22, 61, 143, 0.5) 0, transparent 71%, transparent 52%)
       181% 492px/705px 725px no-repeat,
-    radial-gradient(rgba(22, 61, 143, 0.5) 0, transparent 69%, transparent 100%) -64%
+    radial-gradient(rgba(22, 61, 143, 0.5) 0, transparent 69%, transparent 52%) -64%
       503px/729px 517px no-repeat;
   background-position: 119% -137px, -31% 480px, 123% 661px;
 }

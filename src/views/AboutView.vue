@@ -81,29 +81,29 @@ $lightGreeen-colorSpot: #43ffd399;
     background: radial-gradient(
           rgba(200, 161, 86, 0.5) 0,
           transparent 69%,
-          transparent 100%
+          transparent 50%
         ) -64% 503px/629px 517px no-repeat,
       radial-gradient(
           rgba(200, 161, 86, 0.5) 0,
           transparent 71%,
-          transparent 100%
+          transparent 50%
         )
         181% 492px/605px 725px no-repeat,
       radial-gradient(
           rgba(200, 161, 86, 0.5) 0,
           transparent 69%,
-          transparent 100%
+          transparent 50%
         ) -64% 503px/629px 517px no-repeat,
       radial-gradient(
           rgba(200, 161, 86, 0.5) 0,
           transparent 71%,
-          transparent 100%
+          transparent 50%
         )
         181% 492px/605px 725px no-repeat,
       radial-gradient(
           rgba(200, 161, 86, 0.5) 0,
           transparent 69%,
-          transparent 100%
+          transparent 50%
         ) -64% 503px/629px 517px no-repeat;
 
     background-position: -48% -307px, 33% 243px, 88% 17px, -42% 1855px,
@@ -118,7 +118,7 @@ $lightGreeen-colorSpot: #43ffd399;
   }
 }
 h3 {
-  padding-top: 80px;
+  padding-top: 160px;
   padding-left: 100px;
   padding-bottom: 98px;
 }
@@ -310,7 +310,7 @@ h3 {
 
     h3 {
       font-size: 80px;
-      padding-top: 60px;
+      padding-top: 113px;
       padding-left: 6px;
     }
   }
@@ -478,6 +478,18 @@ h3 {
     }
   }
 }
+@media screen and (max-width: 420px) {
+  .about .first_screen .title::after {
+    width: 0;
+  }
+  .first_screen .info_block {
+    padding: 38px 8px;
+  }
+  .about .first_screen .info_block {
+    margin-left: -2%;
+  }
+}
+
 @media screen and (max-width: 370px) {
   .about {
     h3 {

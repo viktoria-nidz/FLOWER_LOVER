@@ -46,7 +46,7 @@
               <!-- QUESTIONS_FORM END-->
             </div>
 
-            <div class="map_block">
+            <!-- <div class="map_block">
               <div class="title">ми на карті</div>
               <div id="map">
                 <router-link to="javascript:void(0)" id="map_cover">
@@ -56,8 +56,8 @@
                     alt="map_screen"
                   />
                 </router-link>
-              </div>
-            </div>
+              </div> -->
+            <!-- </div> -->
           </div>
         </div>
       </div>
@@ -88,18 +88,18 @@ $lightGreeen-colorSpot: #43ffd399;
     background: radial-gradient(
           rgba(146, 45, 45, 0.5) 0,
           transparent 70%,
-          transparent 100%
+          transparent 52%
         ) -303% -596px/800px 427px no-repeat,
       radial-gradient(
           rgba(146, 45, 45, 0.5) 0,
           transparent 71%,
-          transparent 100%
+          transparent 52%
         )
         181% 492px/800px 725px no-repeat,
       radial-gradient(
           rgba(146, 45, 45, 0.5) 0,
           transparent 71%,
-          transparent 100%
+          transparent 52%
         )
         181% 492px/790px 725px no-repeat;
 
@@ -113,7 +113,7 @@ $lightGreeen-colorSpot: #43ffd399;
   }
   h3 {
     margin-bottom: 40px;
-    padding-top: 60px;
+    padding-top: 118px;
     padding-left: 100px;
   }
   .contacts_wrap {
@@ -299,6 +299,9 @@ $lightGreeen-colorSpot: #43ffd399;
 }
 
 @media screen and (max-width: 540px) {
+  .form_wrap .sup_inst_wrap {
+    width: 315px;
+  }
   .contacts {
     h3 {
       margin-bottom: -20px;
@@ -328,8 +331,19 @@ $lightGreeen-colorSpot: #43ffd399;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 415px) {
+  .contacts .form_wrap form {
+    max-width: 316px;
+    min-width: 316px;
+  }
+
   .contacts {
+    .form_wrap {
+      padding-left: 3px;
+    }
+    .form_block h3 {
+      font-size: 50px;
+    }
     h3 {
       margin-bottom: -60px;
       font-size: 50px;

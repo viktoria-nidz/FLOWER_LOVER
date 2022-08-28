@@ -150,40 +150,40 @@ $lightGreeen-colorSpot: #43ffd399;
     background: radial-gradient(
           rgba(107, 83, 95, 0.5) 0,
           transparent 70%,
-          transparent 100%
+          transparent 52%
         ) -303% -596px/532px 427px no-repeat,
       radial-gradient(
           rgba(107, 83, 95, 0.5) 0,
           transparent 71%,
-          transparent 100%
+          transparent 52%
         )
         181% 492px/605px 725px no-repeat,
       radial-gradient(
           rgba(107, 83, 95, 0.5) 0,
           transparent 69%,
-          transparent 100%
+          transparent 52%
         ) -64% 503px/629px 517px no-repeat,
       radial-gradient(
           rgba(107, 83, 95, 0.5) 0,
           transparent 71%,
-          transparent 100%
+          transparent 52%
         )
         181% 492px/605px 725px no-repeat,
       radial-gradient(
           rgba(107, 83, 95, 0.5) 0,
           transparent 69%,
-          transparent 100%
+          transparent 52%
         ) -64% 503px/629px 517px no-repeat,
       radial-gradient(
           rgba(107, 83, 95, 0.5) 0,
           transparent 71%,
-          transparent 100%
+          transparent 52%
         )
         181% 492px/605px 725px no-repeat,
       radial-gradient(
           rgba(107, 83, 95, 0.5) 0,
           transparent 69%,
-          transparent 100%
+          transparent 52%
         ) -64% 503px/629px 517px no-repeat;
 
     background-position: -37% -278px, 12% 206px, 103% 167px, -31% 1771px,
@@ -194,7 +194,7 @@ $lightGreeen-colorSpot: #43ffd399;
       url(../assets/images/additional_pages/delivery_payment/FlowerSmall.png),
       url(../assets/images/additional_pages/delivery_payment/FlowerBig.png);
     background-repeat: no-repeat;
-    background-position: -88% 1272px, 81% 67px, 403% 1244px;
+    background-position: -88% 1272px, 100% 185px, 403% 1244px;
   }
   .title {
     font-family: "Oswald";
@@ -213,7 +213,7 @@ $lightGreeen-colorSpot: #43ffd399;
     text-transform: uppercase;
   }
   h3 {
-    padding-top: 60px;
+    padding-top: 118px;
     max-width: 700px;
     padding-bottom: 24px;
     span {

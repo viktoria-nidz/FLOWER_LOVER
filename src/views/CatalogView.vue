@@ -1,7 +1,7 @@
 <template>
   <div class="stains_overlay">
     <div class="flower-overlay">
-      <header id="header">
+      <header id="header" class="catalog_before">
         <div class="container">
           <div class="menu_wrap"></div>
           <div class="right_block">
@@ -55,7 +55,7 @@
           </div>
 
           <div class="flower_front"></div>
-          <div class="center_block">
+          <div class="center_block catalog">
             <div class="first_title_line">КАТАЛОГ</div>
             <div class="second_title_line">КВІТІВ</div>
             <div class="desc">
@@ -275,21 +275,21 @@ $lightGreeen-colorSpot: #43ffd399;
         transparent 70%,
         transparent 100%
       ) -303% -596px/737px 527px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 100%)
+    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 50%)
       181% 492px/850px 765px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 100%) -64%
+    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 50%) -64%
       503px/629px 517px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 100%)
+    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 50%)
       181% 492px/805px 725px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 100%) -64%
+    radial-gradient($pastelPinc-colorSpot 0, transparent 69%, transparent 50%) -64%
       503px/629px 517px no-repeat,
-    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 100%)
+    radial-gradient($pastelPinc-colorSpot 0, transparent 71%, transparent 50%)
       181% 492px/955px 725px no-repeat,
-    radial-gradient($lightGreeen-colorSpot 0, transparent 76%, transparent 100%) -64%
+    radial-gradient($lightGreeen-colorSpot 0, transparent 76%, transparent 50%) -64%
       503px/579px 817px no-repeat,
-    radial-gradient($lightGreeen-colorSpot 0, transparent 71%, transparent 100%)
+    radial-gradient($lightGreeen-colorSpot 0, transparent 71%, transparent 50%)
       181% 492px/605px 725px no-repeat,
-    radial-gradient($lightGreeen-colorSpot 0, transparent 69%, transparent 100%) -64%
+    radial-gradient($lightGreeen-colorSpot 0, transparent 69%, transparent 50%) -64%
       503px/629px 517px no-repeat;
 
   background-position: -20% 197px, 144% -397px, 101% 438px, -25% 571px,
@@ -563,6 +563,138 @@ $lightGreeen-colorSpot: #43ffd399;
   row-gap: 60px;
   flex-wrap: wrap;
 }
+
+// CATALOG RESPONSIVE START
+@media screen and (max-width: 1275px) {
+  .flowers_catalog_items {
+    justify-content: space-evenly;
+  }
+  .center_block.catalog {
+    max-width: 792px;
+    margin-left: 100px;
+    .first_title_line,
+    .second_title_line {
+      font-size: 110px;
+      line-height: 113px;
+    }
+  }
+}
+
+@media screen and (max-width: 1190px) {
+  .center_block.catalog {
+    max-width: 692px;
+    margin-left: 50px;
+    .first_title_line,
+    .second_title_line {
+      font-size: 100px;
+      text-align: left;
+      justify-content: left;
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .catalog_page_wrap .filters {
+    .color_filter label,
+    .format_filter label {
+      font-size: 15px;
+    }
+    .title_filter {
+      font-size: 16px;
+    }
+
+    max-height: min-content;
+    max-height: 545px;
+    max-width: 229px;
+    min-width: 197px;
+  }
+  .flowers_catalog_items {
+    column-gap: 25px;
+    width: 100vw;
+    max-width: 60vw;
+    justify-content: space-evenly;
+  }
+  .catalog_page_wrap {
+    column-gap: 30px;
+    width: 100%;
+  }
+  .center_block.catalog {
+    max-width: 600px;
+    margin-left: 30px;
+    .first_title_line,
+    .second_title_line {
+      font-size: 85px;
+      line-height: 89px;
+      text-align: left;
+      justify-content: left;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .catalog_before {
+      .mail_wrap div {
+        max-width: 130px;
+        line-height: 20px;
+      }
+    }
+    .flowers_catalog_items {
+      max-width: 86vw;
+    }
+    #header.catalog_before {
+      padding-bottom: 60px;
+    }
+    .center_block.catalog {
+      max-width: 570px;
+      margin-left: 0px;
+      .first_title_line,
+      .second_title_line {
+        font-size: 90px;
+      }
+    }
+
+    .catalog_page_wrap[data-v-10441314] {
+      flex-direction: column;
+    }
+    .catalog_page_wrap .filters {
+      max-height: min-content;
+      max-height: 240px;
+      max-width: 87vw;
+      min-width: 87vw;
+      margin-bottom: 30px;
+      // margin: 40px auto;
+    }
+    #filters_form {
+      display: flex;
+      flex-direction: row;
+      column-gap: 5px;
+      justify-content: space-between;
+      padding: 15px;
+    }
+  }
+
+  @media screen and (max-width: 805px) {
+    .right_block {
+      display: none;
+    }
+    #header.catalog_before {
+      padding-bottom: 19px;
+    }
+    .center_block.catalog[data-v-10441314] {
+      max-width: 90vw;
+      margin-left: 0px;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    #filters_form {
+      flex-wrap: wrap;
+      max-height: 350px;
+      height: 350px;
+    }
+  }
+}
+
+// CATALOG RESPONSIVE END
 </style>
 
 <script>
