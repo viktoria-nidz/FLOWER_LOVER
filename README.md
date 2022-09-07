@@ -1,24 +1,7 @@
 # flower_lover
 
-## Project setup
-```
-npm install
-```
+## YOU CAN OPEN PROJECT HERE:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+https://viktoria-nidz.github.io/FLOWER_LOVER/
 
-### Compiles and minifies for production
-```
-npm run build
-```
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
