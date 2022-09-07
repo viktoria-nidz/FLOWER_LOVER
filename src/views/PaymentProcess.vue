@@ -31,7 +31,7 @@
   h3 {
     margin-left: -160px;
     font-size: 90px;
-    max-width: 60vw;
+    max-width: 80%;
     padding-bottom: 70px;
   }
   button {
@@ -45,6 +45,26 @@
   row-gap: 15px;
   padding-top: 100px;
   padding-bottom: 150px;
+}
+@media screen and (max-width: 1040px) {
+  .methods h3 {
+    font-size: 70px;
+    max-width: unset;
+    padding-bottom: 40px;
+    margin-left: 3px;
+  }
+  .methods button {
+    max-width: 300px;
+    min-width: 300px;
+  }
+}
+@media screen and (max-width: 810px) {
+  .methods h3 {
+    font-size: 50px;
+    line-height: 40px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+  }
 }
 </style>
 

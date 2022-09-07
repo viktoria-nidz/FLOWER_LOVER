@@ -1,7 +1,7 @@
 <template>
   <div class="flower-overlay">
     <div class="stains_overlay">
-      <header id="header">
+      <header class="header">
         <div class="">
           <div class="container">
             <div class="menu_wrap"></div>
@@ -78,8 +78,6 @@
             </div>
           </div>
         </div>
-
-        <div class="dark_overlay"></div>
       </header>
     </div>
   </div>
@@ -260,7 +258,9 @@
               </ul>
               <router-link to="/CatalogView">
                 <button class="standart_green_btn" type="button">
-                  зібрати індивідуальний букет
+                  <router-link to="/Error404View"
+                    >зібрати індивідуальний букет</router-link
+                  >
                 </button>
               </router-link>
             </div>
@@ -296,8 +296,7 @@
               <div class="sup_inst_wrap">
                 <p class="sup_instr">
                   Натискаючи на кнопку «Надіслати», я даю свою згоду на обробку
-                  персональних даних відповідно до
-                  <span> Політики конфіденційності</span>
+                  персональних даних.
                 </p>
               </div>
             </div>
@@ -426,6 +425,10 @@ input:-internal-autofill-selected {
   display: flex;
   margin-bottom: 30px;
   background-repeat: no-repeat;
+}
+.standart_green_btn a {
+  color: black;
+  text-decoration: none;
 }
 
 // @media screen and (max-width: 1377px) {
@@ -561,6 +564,10 @@ input:-internal-autofill-selected {
   }
 }
 @media screen and (max-width: 905px) {
+  .flower-overlay .header {
+    margin-bottom: -103px;
+    padding-bottom: 217px;
+  }
   .questions_form .signature {
     line-height: 35px;
     left: 76%;

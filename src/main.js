@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
+import Maska from "maska";
+
 // import VueAxios from "vue-axios";
 
 import "./assets/scss/main.scss";
@@ -12,4 +14,4 @@ import "./assets/scss/hamburgers.scss";
 // App.prototype.$axios = axios;
 // App.use(VueAxios,axios);
 
-createApp(App).use(router).use(router).mount("#app");
+createApp(App).use(router).use(router).use(Maska).mount("#app");

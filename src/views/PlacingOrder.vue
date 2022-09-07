@@ -27,7 +27,6 @@
                     type="text"
                     id="name"
                     name="name"
-                    required
                     :class="{ is_invalid: errors.name !== '' }"
                     placeholder="Введіть ваше ім'я"
                   />
@@ -38,13 +37,13 @@
                   <input
                     v-model="phone"
                     @focus="resetError('phone')"
+                    v-maska="'### ## ### ## ##'"
+                    placeholder="### ## ### ## ##"
                     :class="{ is_invalid: errors.phone !== '' }"
                     tabindex="2"
                     type="tel"
                     id="phone-number"
                     name="phone-number"
-                    required
-                    placeholder="+380730942110"
                   />
                   <div class="warning">{{ errors.phone }}</div>
                 </div>
@@ -58,7 +57,6 @@
                     type="email"
                     id="email"
                     name="email"
-                    required
                     placeholder="Введіть вашу пошту"
                   />
                   <div class="warning">{{ errors.email }}</div>
@@ -75,7 +73,8 @@
                     @focus="resetError('recipient_phone')"
                     id="phone-number"
                     name="phone-number"
-                    placeholder="+380730942110"
+                    v-maska="'### ## ### ## ##'"
+                    placeholder="### ## ### ## ##"
                   />
                   <div class="warning">{{ errors.recipient_phone }}</div>
                 </div>
@@ -148,7 +147,6 @@
                       :class="{ is_invalid: errors.city !== '' }"
                       v-model="city"
                       @focus="resetError('city')"
-                      required
                       tabindex="9"
                       type="text"
                       id="city"
@@ -163,7 +161,6 @@
                       :class="{ is_invalid: errors.street !== '' }"
                       v-model="street"
                       @focus="resetError('street')"
-                      required
                       tabindex="10"
                       type="text"
                       id="street"
@@ -237,12 +234,11 @@
                   Загальна сума замовлення: {{ this.total }} UAN
                 </div>
 
-                <button
-                  type="submit"
-                  @click="$router.push('/PaymentProcess')"
-                  class="standart_green_btn to_pay_btn"
-                >
-                  ДО ОПЛАТИ
+                <button type="submit" class="standart_green_btn to_pay_btn">
+                  <span v-if="!this.valid"> ДО ОПЛАТИ</span>
+                  <span v-else @click="$router.push('/PaymentProcess')">
+                    ДО ОПЛАТИ</span
+                  >
                 </button>
               </form>
             </div>
@@ -505,10 +501,88 @@ input:-internal-autofill-selected {
   text-transform: uppercase;
   font-family: "Cormorant";
 }
+@media screen and (max-width: 1090px) {
+  .center_block .first_title_line,
+  .center_block .second_title_line {
+    font-size: 95px;
+    line-height: 111px;
+  }
+  .form_wrap {
+    margin-top: 58px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .order_info .container {
+    .cart_side {
+      margin-top: 37px;
+      .title_cart {
+        font-size: 30px;
+      }
+    }
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .center_block .first_title_line,
+  .center_block .second_title_line {
+    font-size: 77px;
+    line-height: 81px;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .center_block .first_title_line,
+  .center_block .second_title_line {
+    font-size: 56px;
+    line-height: 62px;
+  }
+  .form_wrap {
+    padding-left: 5px;
+    max-width: 95vw;
+  }
+  .to_pay_btn {
+    max-width: 295px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .center_block .first_title_line,
+  .center_block .second_title_line {
+    font-size: 52px;
+    line-height: 62px;
+  }
+  .center_block .second_title_line {
+    padding-left: 0px;
+  }
+  .form_input input {
+    max-width: 300px;
+  }
+  .small_input_wrap {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .center_block .first_title_line,
+  .center_block .second_title_line {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .to_pay.title_main,
+  .title_main,
+  .title_cart {
+    font-size: 16px;
+  }
+}
 </style>
 
 <script>
 import axios from "axios";
+// import Maska from "maska";
+// import vueRouter from "vue-router";
+// import VueMask from "v-mask";
 import cartItem from "@/components/cartItem.vue";
 export default {
   name: "PlacingOrder",
@@ -519,7 +593,7 @@ export default {
     return {
       API_BOT_ID: "5304811755:AAGAlQLe6tex_5H-dDWBO1oI4Ytwb0CMpVk",
       CHAT_ID: "-1001688345339",
-
+      valid: false,
       cart: [],
       delivery: false,
       name: "",
@@ -530,6 +604,7 @@ export default {
       comment: "",
       delivery_method: "",
       city: "",
+      checkValid: false,
       street: "",
       house: 0,
       flat: 0,
@@ -592,43 +667,46 @@ export default {
     checkAndSend() {
       let valid = true;
       if (this.name === "") {
-        this.errors.name = "Enter your name!";
+        this.errors.name = "Введіть своє ім'я!";
         valid = false;
       }
 
       if (this.name.length === 1) {
-        this.errors.name = "Minimal name length is 2 chars!";
+        this.errors.name = "Мінімальна довжина імені 2 символа!";
         valid = false;
       }
 
       if (this.email === "") {
-        this.errors.email = "Enter your email!";
+        this.errors.email = "Введіть email!";
         valid = false;
-      } else if (this.isValidEmail(this.email) === false) {
-        this.errors.email = "Enter your valid email!";
+
+        /* eslint-disable no-alert, no-console */
+      } else if (
+        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email) // eslint-disable-line no-use-before-define
+      ) {
+        /* eslint-enable no-alert, no-console*/
+        this.errors.email = "Введіть валідний email!";
         valid = false;
       }
-      if (this.phone === "") {
-        this.errors.phone = "Enter your phone number!";
+      if (this.phone === "" || this.phone.length < 12) {
+        this.errors.phone = "Введіть свій валідний телефон!";
         valid = false;
       }
 
       if (this.delivery_method === "courier") {
         if (this.city === "") {
-          this.errors.city = "Enter your city!";
+          this.errors.city = "Введіть місто!";
           valid = false;
         }
-        if (this.city === "") {
-          this.errors.city = "Enter your city!";
-          valid = false;
-        }
+
         if (this.street === "") {
-          this.errors.street = "Enter your street!";
+          this.errors.street = "Введіть вулицю";
           valid = false;
         }
       }
 
       if (valid) {
+        this.valid = true;
         const message_text =
           "<i>ORDER INFORMATION:</i>" +
           "%0a<b>Name:</b>" +

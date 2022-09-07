@@ -51,6 +51,21 @@ body {
   margin: 0 auto;
   background-repeat: no-repeat;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid white;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  box-shadow: 0 0 0px 1000px #000 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 img {
   width: 100%;
@@ -78,7 +93,7 @@ h3 {
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
-  z-index: 2999;
+  z-index: 100;
   &.open {
     display: block;
   }
@@ -118,9 +133,9 @@ h3 {
   padding: 30px;
   height: 100vh;
   z-index: 3000;
-  -webkit-transform: translateX(-300px);
-  -ms-transform: translateX(-300px);
-  transform: translateX(-300px);
+  -webkit-transform: translateX(-320px);
+  -ms-transform: translateX(-320px);
+  transform: translateX(-320px);
   -webkit-transition: all 0.7s ease;
   -o-transition: all 0.7s ease;
   transition: all 0.7s ease;
@@ -132,10 +147,10 @@ h3 {
 }
 
 // FIRST SCREEN START
-#header {
+.header {
   width: 100%;
   margin-bottom: 120px;
-  padding-bottom: 720px;
+  padding-bottom: 480px;
   // position: relative;
   // z-index: 1;
   width: 100%;
@@ -352,10 +367,8 @@ h3 {
   display: flex;
   padding: 30px;
   align-items: flex-end;
-  z-index: -1;
-  height: 300px;
-  bottom: -123px;
-  // background-color:;
+  height: 452px;
+  bottom: -525px;
   left: 0;
   background-image: linear-gradient(rgba(4, 10, 10, 0), rgba(4, 10, 10, 1));
   background-position: 90% -80%;
@@ -622,72 +635,87 @@ h3 {
   // position: relative;
   background-color: transparent !important;
   border: none;
-
+  transform: translate(-53%, -50%) !important;
+  top: 36% !important;
+  width: 90px !important;
+  left: -45px !important;
   svg {
     display: none;
   }
   &::after {
     @include triangle();
     transform: rotate(90deg);
-    top: -48.1px;
-    left: -87px;
+    top: 12.4px;
+    left: 2px;
   }
   &::before {
     content: "";
     width: 80px;
     height: 1px;
     position: absolute;
-    top: -46px;
-    left: -80px;
+    top: 15px;
+    left: 9px;
     background-color: $lightGreeen-color;
   }
 }
 
 .carousel__next {
+  right: -26px !important;
   // position: relative;
   background-color: transparent !important;
-  border: none;
 
+  top: 36% !important;
+  width: 90px !important;
   svg {
     display: none;
   }
   &::after {
     @include triangle();
-    transform: rotate(273deg);
-    top: -47px;
-    left: 105px;
+    transform: rotate(270deg);
+    top: 13px;
+    left: 79px;
   }
   &::before {
     content: "";
     width: 80px;
     height: 1px;
     position: absolute;
-    top: -46px;
-    left: 30px;
+    top: 15px;
+    left: 2px;
     background-color: $lightGreeen-color;
   }
 }
 @media screen and (max-width: 1377px) {
+  .carousel__next,
+  .carousel__prev {
+    width: 50px !important;
+  }
+  .carousel__prev {
+    transform: translate(2%, -50%) !important;
+  }
+  .carousel__next {
+    transform: translate(4%, -50%) !important;
+  }
   .carousel__prev::before {
     width: 40px;
-    left: -35px;
+    left: 9px;
   }
   .carousel__next::before {
     width: 40px;
-    left: 26px;
+    left: 2px;
   }
 
   .carousel__prev::after {
-    left: -41px;
+    left: 2px;
   }
   .carousel__next::after {
-    left: 60px;
+    left: 39px;
   }
 }
 @media screen and (max-width: 1080px) {
   .carousel__prev::before {
     width: 31px;
-    left: -20px;
+    left: 18px;
   }
   .carousel__next::before {
     width: 31px;
@@ -695,7 +723,7 @@ h3 {
   }
 
   .carousel__prev::after {
-    left: -23px;
+    left: 11px;
   }
   .carousel__next::after {
     left: 44px;
@@ -833,38 +861,7 @@ h3 {
   }
 }
 
-// .popular_slider_wrapper {
-//   width: 100%;
 
-// display: flex;
-// justify-content: center;
-// gap: 30px;
-// margin-bottom: 200px;
-
-// img {
-//   min-width: 300px;
-//   max-width: 350px;
-//   max-height: 450px;
-//   padding-bottom: 10px;
-//   filter: grayscale(100%);
-//   &:hover,
-//   &:focus {
-//     filter: grayscale(0%);
-//   }
-// }
-// .bouquet_name {
-//   text-transform: uppercase;
-//   font-size: 20px;
-//   flex-wrap: 400;
-//   letter-spacing: 1.7px;
-//   padding-bottom: 10px;
-// }
-// .price {
-//   padding-bottom: 20px;
-//   font-weight: 700;
-//   letter-spacing: 0.9px;
-// }
-//
 .transparent_btn {
   background-color: transparent;
   font-family: "Oswald";
@@ -1405,7 +1402,7 @@ h3 {
     }
   }
   .flower-overlay {
-    #header {
+    .header {
       .center_block.main_page {
         .first_title_line,
         .second_title_line {
@@ -1423,7 +1420,7 @@ h3 {
     min-width: 369px;
   }
   .flower-overlay {
-    #header {
+    .header {
       .menu_wrap ul {
         min-width: 425px;
       }
@@ -1448,7 +1445,7 @@ h3 {
     right: -9px;
   }
   .flower-overlay {
-    #header {
+    .header {
       margin-bottom: 120px;
       padding-bottom: 320px;
       .logo_wrap {
@@ -1495,7 +1492,7 @@ h3 {
 
   @media screen and (max-width: 845px) {
     .flower-overlay {
-      #header.main_page {
+      .header {
         margin-bottom: 120px;
         padding-bottom: 320px;
         .logo_wrap {
@@ -1505,7 +1502,7 @@ h3 {
           min-width: 400px;
         }
 
-        .center_block {
+        .center_block.main_page {
           .second_title_line {
             margin-bottom: 30px;
           }
@@ -1619,7 +1616,7 @@ h3 {
       }
     }
     .flower-overlay {
-      #header.main_page {
+      .header {
         .social_networks {
           width: 43px;
         }
@@ -1628,7 +1625,7 @@ h3 {
           min-width: 400px;
         }
 
-        .center_block {
+        .center_block.main_page {
           .second_title_line {
             margin-bottom: 30px;
           }
@@ -1660,12 +1657,12 @@ h3 {
       }
     }
     .flower-overlay {
-      #header.main_page {
+      .header {
         .menu_wrap ul {
           min-width: 341px;
         }
 
-        .center_block {
+        .center_block.main_page {
           padding-top: 50px;
           left: -13px;
 
@@ -1722,7 +1719,7 @@ h3 {
     .menu_wrap.mobile-version {
       gap: 9px;
     }
-    .flower-overlay #header .center_block {
+    .flower-overlay .header .center_block.main_page {
       .desc {
         padding-bottom: 15px;
         max-width: 270px;
@@ -1751,8 +1748,8 @@ h3 {
   }
 
   @media screen and (max-width: 390px) {
-    .flower-overlay #header .center_block .first_title_line,
-    .flower-overlay #header .center_block .second_title_line {
+    .flower-overlay .header .center_block.main_page .first_title_line,
+    .flower-overlay .header .center_block.main_page .second_title_line {
       font-size: 66px;
       line-height: 70px;
     }

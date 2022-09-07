@@ -2,14 +2,13 @@
   <form @submit.prevent="checkAndSend">
     <input
       v-model.trim="name"
-      @focus="resetError('phone')"
+      @focus="resetError('name')"
       type="text"
       name="full_name"
       id="form_name"
       class="form_input name"
       placeholder="Ваше ім'я"
       :class="{ invalid: errors.name !== '' }"
-      required
     />
     <div class="warning">{{ errors.name }}</div>
     <input
@@ -19,9 +18,9 @@
       name="tel"
       id="form_phone"
       class="form_input phone"
-      placeholder="+380 73 087 21 16"
+      v-maska="'### ## ### ## ##'"
+      placeholder="### ## ### ## ##"
       :class="{ invalid: errors.phone !== '' }"
-      required
     />
     <div class="warning">{{ errors.phone }}</div>
     <textarea
@@ -31,7 +30,6 @@
       rows="5"
       class="form_input massage"
       placeholder="Ваш коментар"
-      required
       :class="{ invalid: errors.comment !== '' }"
       id="form_massage"
     ></textarea>
@@ -75,8 +73,8 @@ export default {
     return {
       API_BOT_ID: "5304811755:AAGAlQLe6tex_5H-dDWBO1oI4Ytwb0CMpVk",
       CHAT_ID: "-1001688345339",
+      name: "",
       phone: "",
-      email: "",
       comment: "",
       errors: {
         phone: "",
@@ -89,21 +87,21 @@ export default {
     checkAndSend() {
       let valid = true;
       if (this.name === "") {
-        this.errors.name = "Enter your name!";
+        this.errors.name = "Введіть своє ім'я!";
         valid = false;
       }
 
       if (this.name.length === 1) {
-        this.errors.name = "Minimal name length is 2 chars!";
+        this.errors.name = "Мінімальна довжина імені - два символи!";
         valid = false;
       }
 
-      if (this.phone === "") {
-        this.errors.phone = "Enter your phone number!";
+      if (this.phone === "" || this.phone.length < 12) {
+        this.errors.phone = "Введіть валідний номер телефону";
         valid = false;
       }
       if (this.comment === "") {
-        this.errors.comment = "Enter message text!";
+        this.errors.comment = "Введіь своє повідомлення";
         valid = false;
       }
 

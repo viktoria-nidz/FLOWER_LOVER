@@ -1,18 +1,17 @@
 <template>
   <div class="carousel">
     <carousel
-      :items-to-show="1.5"
+      :items-to-show="3"
       :settings="sliderSettings"
       :breakpoints="breakpoints"
     >
       <slide v-for="flower in flowers" :key="flower">
-        <div class="flag_wrap" v-if="flower.isSale && flower.isNew">
-          <div class="sale">SALE</div>
-          <div class="new">NEW</div>
+        <!-- <oneProduct /> -->
+        <div class="flag_wrap">
+          <div v-if="flower.isSale" class="sale">SALE</div>
+          <div v-if="flower.isNew" class="new">NEW</div>
         </div>
 
-        <div v-else-if="flower.isSale" class="sale">SALE</div>
-        <div v-else-if="flower.isNew" class="new">NEW</div>
         <div class="flower_card">
           <img
             :src="require(`@/assets/images/flowers/${flower.images[0]}`)"
@@ -49,10 +48,11 @@
 import "vue3-carousel/dist/carousel.css";
 import axios from "axios";
 import { Carousel, Slide, Pagination, Navigation } from "vue3-carousel";
-
+// import oneProduct from "@/components/oneProduct.vue";
 export default {
   name: "sliderFavorite",
   components: {
+    // oneProduct,
     Carousel,
     Slide,
     Pagination,
@@ -65,11 +65,11 @@ export default {
       newQtyItem: 0,
       sliderSettings: {
         itemsToShow: 3,
-        transition: 800,
-        itemsToScroll: 1,
-        infiniteLoop: true,
-        snapAlign: "start",
-        wrapAround: true,
+        // transition: 800,
+        // itemsToScroll: 1,
+        // infiniteLoop: true,
+        // snapAlign: "start",
+        // wrapAround: true,
       },
 
       breakpoints: {

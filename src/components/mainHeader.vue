@@ -1,6 +1,4 @@
 <template>
-  <!-- <div class="page-overlay"></div> -->
-
   <header id="header" class="ad_page">
     <!-- MOBILE MENU START -->
     <div id="side-block">
@@ -23,31 +21,39 @@
         </div>
 
         <ul class="mobile">
-          <li><router-link to="/CatalogView">Каталог</router-link></li>
-          <li>
+          <li @click="toggleMenu">
+            <router-link to="/CatalogView">Каталог</router-link>
+          </li>
+          <li @click="toggleMenu">
             <router-link to="/DeliveryPaymentView"
               >Доставка і оплата
             </router-link>
           </li>
-          <li>
+          <li @click="toggleMenu">
             <router-link to="/AboutView">Про нас</router-link>
           </li>
-          <li>
+          <li @click="toggleMenu">
             <router-link to="/ContactsView">Контакти</router-link>
           </li>
-          <li>
+          <li @click="toggleMenu">
             <router-link to="/FaqView">FAQ </router-link>
           </li>
         </ul>
         <div class="mail_wrap">
-          <router-link to="mailto:zakaz@loverflower.by" class="bigger link"
+          <router-link
+            @click="toggleMenu"
+            to="mailto:zakaz@loverflower.by"
+            class="bigger link"
             >zakaz@loverflower.by</router-link
           >
           <div class="smaller">Доставка 24/7 по домовленості с оператором</div>
         </div>
 
         <div class="tel_wrap">
-          <router-link to="tel:+375 (29) 113-69-69" class="bigger"
+          <router-link
+            @click="toggleMenu"
+            to="tel:+375 (29) 113-69-69"
+            class="bigger"
             >+375 (29) 113-69-69</router-link
           >
           <div class="smaller">Прийом дзвінків цілодобово</div>
@@ -87,15 +93,11 @@
             </li>
           </ul>
         </div>
-        <!-- <div class="green_text">Реквізити</div>
-        <div class="adress">
-          ТОВ "Ловефлове" 220035, Україна, м.Київ, вул. Тимірязєва буд. 67,
-          кімн. 112 (прим.11) УНП 193263781, р/р BY55MTBK3012000109
-        </div>
-      </div> -->
       </div>
     </div>
     <!-- MOBILE MENU END -->
+    <div class="page-overlay"></div>
+
     <div class="container">
       <div class="menu_wrap mobile-version">
         <div class="hamb-menu">
@@ -157,57 +159,7 @@
       </div>
       <div class="cart_body">
         <cartItem />
-        <div class="cart_item">
-          <!-- <div class="cart_item" v-for="flower in cart" :key="flower">
-          <div class="center_block">
-            <img
-              :src="require(`@/assets/images/flowers/${flower.id}.1.jpg`)"
-              class="card-img-top"
-              :alt="flower.title"
-            />
-
-            <div class="wrap_qty_title">
-              <div class="flower_title">
-                {{ flower.name }}
-              </div>
-              <div class="qty_change">
-                <button
-                  type="button"
-                  class="_inc"
-                  @click="changeProductQty(flower.id, 'inc')"
-                >
-                  +
-                </button>
-                <div>{{ flower.qty }}</div>
-                <button
-                  type="button"
-                  class="qty_dec"
-                  @click="changeProductQty(flower.id, 'dec')"
-                >
-                  -
-                </button>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- <div class="total_block">
-          <div class="price_item">{{ flower.total }} UAN</div>
-          <button
-            type="button"
-            class="delete_btn"
-            @click="askProdDel(flower.id)"
-          >
-            видалити
-          </button>
-        </div> -->
-          <!-- </div>
-    </div>
-    <div class="cart_footer">
-      <div class="to_pay">До сплати: {{ this.total }} UAN</div>
-      <div class="warning">
-       Вартість з доставкою відображується при оформленні замовлення.
-      </div> -->
-        </div>
+        <div class="cart_item"></div>
         <router-link to="/PlacingOrder">
           <button
             class="transparent_btn btn_pay"
@@ -303,7 +255,7 @@ $pastelPinc-color: #d978ac;
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
   display: none;
-  z-index: 7001;
+  z-index: 2000;
   &.open {
     display: block;
   }
@@ -433,6 +385,18 @@ $pastelPinc-color: #d978ac;
       transform: rotate(49deg);
     }
   }
+  scrollbar-color: #12130d #f7d794;
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #12130d;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $lightGreeen-color;
+    border-radius: 1px;
+  }
 
   width: 350px;
   min-width: 320px;
@@ -443,8 +407,8 @@ $pastelPinc-color: #d978ac;
   color: $lightGreeen-color;
   padding: 30px;
   height: 100vh;
-  overflow: scroll;
-  z-index: 3000;
+  overflow: auto;
+  z-index: 8000;
   -webkit-transform: translateX(350px);
   -ms-transform: translateX(350px);
   transform: translateX(350px);
@@ -457,7 +421,7 @@ $pastelPinc-color: #d978ac;
     transform: translateX(0);
   }
   .price_item {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 // CART BLOCK END
@@ -544,9 +508,9 @@ $pastelPinc-color: #d978ac;
   padding: 30px;
   height: 100vh;
   z-index: 3000;
-  -webkit-transform: translateX(-300px);
-  -ms-transform: translateX(-300px);
-  transform: translateX(-300px);
+  -webkit-transform: translateX(-320px);
+  -ms-transform: translateX(-320px);
+  transform: translateX(-320px);
   -webkit-transition: all 0.7s ease;
   -o-transition: all 0.7s ease;
   transition: all 0.7s ease;

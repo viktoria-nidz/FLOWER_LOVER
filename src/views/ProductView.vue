@@ -9,15 +9,23 @@
                 <div class="product_photos">
                   <div class="right_photo">
                     <img
+                      @click="changeImg(this.first, 'first')"
+                      v-if="flower.images[1]"
                       :src="
-                        require(`@/assets/images/flowers/${flower.images[1]}`)
+                        require(`@/assets/images/flowers/${
+                          flower.images[this.first]
+                        }`)
                       "
                       class="card-img-top"
                       :alt="flower.title"
                     />
                     <img
+                      @click="changeImg(this.second, 'second')"
+                      v-if="flower.images[2]"
                       :src="
-                        require(`@/assets/images/flowers/${flower.images[2]}`)
+                        require(`@/assets/images/flowers/${
+                          flower.images[this.second]
+                        }`)
                       "
                       class="card-img-top"
                       :alt="flower.title"
@@ -25,8 +33,11 @@
                   </div>
                   <div class="center_photo">
                     <img
+                      v-if="flower.images[0]"
                       :src="
-                        require(`@/assets/images/flowers/${flower.images[0]}`)
+                        require(`@/assets/images/flowers/${
+                          flower.images[this.center]
+                        }`)
                       "
                       class="card-img-top"
                       :alt="flower.title"
@@ -61,7 +72,7 @@
                     <button
                       class="transparent_btn"
                       type="button"
-                      @click="addToCartx(flower.id, flower.price, flower.title)"
+                      @click="addToCart(flower.id, flower.price, flower.title)"
                     >
                       У корзину
                     </button>
@@ -199,6 +210,11 @@ $pastelPinc-colorSpot: #d978ac8b;
 $lightGreeen-colorSpot: #43ffd399;
 // PRODUCT PAGE START
 .product_page {
+  .product_photos img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
   .slider_wrape {
     padding-bottom: 150px;
   }
@@ -581,34 +597,117 @@ $lightGreeen-colorSpot: #43ffd399;
   .how_to_order .steps_wrap::before {
     right: 25px;
   }
-  .deliv_paym {
-    .paym_methods .methods_wrap .method {
-      font-size: 17px;
-      padding: 23px 15px 15px;
-      width: 226px;
-    }
+
+  .paym_methods .methods_wrap .method {
+    font-size: 17px;
+    padding: 23px 15px 15px;
+    width: 226px;
+  }
+}
+@media screen and (max-width: 1190px) {
+  .product_page .info_product {
+    max-width: 400px;
+  }
+  .product_page .paym_methods .methods_wrap .method[data-v-5ebb49ea] {
+    column-gap: 15px;
+    padding: 22px 7px;
   }
 }
 
 @media screen and (max-width: 1070px) {
-  .deliv_paym {
-    .paym_methods .methods_wrap {
-      justify-content: center;
-      flex-wrap: wrap;
-      .method {
-        width: 250px;
-      }
-      row-gap: 25px;
-      column-gap: 120px;
+  .paym_methods .methods_wrap {
+    display: flex;
+
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    width: 100%;
+    .method {
+      width: 250px;
     }
-    .paym_methods .title {
-      padding-left: 70px;
+    row-gap: 25px;
+    column-gap: 120px;
+  }
+  .paym_methods .title {
+    padding-left: 70px;
+  }
+  .product_page .paym_methods .methods_wrap {
+    justify-content: center;
+  }
+  .right_photo {
+    img {
+      min-width: 160px;
     }
+  }
+  .center_photo {
+    img {
+      min-width: 280px;
+    }
+  }
+  .product_page {
+    .title_product {
+      font-size: 29px;
+      line-height: 9px;
+      margin-bottom: 10px;
+    }
+    .price {
+      font-size: 24px;
+      margin-bottom: 3px;
+      line-height: 35.5px;
+    }
+    .btns_wrap {
+      -moz-column-gap: 15px;
+      column-gap: 15px;
+    }
+  }
+  .product_page .paym_methods .methods_wrap .method {
+    -moz-column-gap: 15px;
+    column-gap: 5px;
+    padding: 22px 7px;
+    min-width: 215px;
+  }
+}
+@media screen and (max-width: 990px) {
+  .product_page .flower_item {
+    -moz-column-gap: 9px;
+    column-gap: 9px;
+  }
+  .product_page .product_photos {
+    column-gap: 15px;
+
+    .right_photo {
+      row-gap: 15px;
+    }
+  }
+  .product_page .info_product {
+    max-width: 357px;
   }
 }
 
 @media screen and (max-width: 907px) {
- 
+  .product_page {
+    .btns_wrap {
+      flex-wrap: wrap-reverse;
+      row-gap: 15px;
+      button,
+      .qty_change {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+      }
+    }
+    li {
+      font-size: 16px;
+    }
+    .highlighted {
+      font-size: 16px;
+    }
+  }
+  .product_page .flower_item {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
   .deliv_paym {
     .flowers {
       background-position: -88% 1272px, -200% 67px, 403% 1244px;
@@ -698,6 +797,11 @@ $lightGreeen-colorSpot: #43ffd399;
     }
   }
 }
+@media screen and (max-width: 500px) {
+  .product_page .product_photos .right_photo {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 480px) {
   .deliv_paym {
@@ -736,9 +840,12 @@ export default {
 
   data() {
     return {
-      flower: [],
+      flower: { images: [] },
       flowers: [],
-      // qty: 1,
+      first: 1,
+      second: 2,
+      center: 0,
+      qty: 1,
       cart: [],
       newQty: 1,
     };
@@ -759,6 +866,17 @@ export default {
     });
   },
   methods: {
+    changeImg(index, place) {
+      let changer;
+
+      changer = this.center;
+      this.center = index;
+      if (place === "first") {
+        this.first = changer;
+      } else {
+        this.second = changer;
+      }
+    },
     changeProductQty(id, action) {
       const index = this.flowers.findIndex((el) => el.id === id);
       if (action === "inc") {
@@ -771,7 +889,7 @@ export default {
           return false;
         }
       }
-      console.log(this.newQty);
+
       this.flowers[index].qty = this.newQty;
       this.cart[index].total = this.cart[index].price * this.newQty;
     },
@@ -805,7 +923,7 @@ export default {
             (this.newQty * this.cart[prodIndex].price).toFixed(2)
           );
         }
-
+        console.log("YEDDD:" + this.newQty);
         localStorage.setItem("products in cart", JSON.stringify(this.cart));
         this.cart = JSON.parse(localStorage.getItem("products in cart")) || [];
 

@@ -688,12 +688,34 @@ $lightGreeen-colorSpot: #43ffd399;
   @media screen and (max-width: 520px) {
     #filters_form {
       flex-wrap: wrap;
-      max-height: 350px;
-      height: 350px;
+      max-height: 310px;
+      height: 310px;
+    }
+    .catalog_page_wrap .filters {
+      max-height: min-content;
+      max-height: 380px;
+    }
+  }
+  @media screen and (max-width: 430px) {
+    .flower-overlay #header .center_block.catalog .first_title_line,
+    .flower-overlay #header .center_block.catalog .second_title_line {
+      font-size: 56px;
+      line-height: 69px;
+    }
+  }
+
+  @media screen and (max-width: 380px) {
+    #filters_form {
+      max-height: 600px;
+      height: 600px;
+    }
+    .catalog_page_wrap .filters {
+      max-height: min-content;
+      max-height: 680px;
+      min-width: 40vw;
     }
   }
 }
-
 // CATALOG RESPONSIVE END
 </style>
 
@@ -712,6 +734,7 @@ export default {
       // filteredFlowers: [],
       flowers: [],
       cart: [],
+      cartLength: 0,
       showProduct: false,
       to: 10000,
       markContainCheck: 0,
@@ -726,7 +749,9 @@ export default {
     };
   },
   computed: {
+
     filteredFlowers() {
+
       return this.flowers.filter((el) => {
         if (this.selected.color.length && this.selected.format.length) {
           return (
@@ -768,6 +793,7 @@ export default {
     axios.get("data/flowers.json").then((resp) => {
       this.flowers = resp.data;
       this.cart = JSON.parse(localStorage.getItem("products in cart")) || [];
+      this.cartLength  = this.cart.length;
       // console.log(this.cart);
     });
   },
@@ -777,6 +803,7 @@ export default {
         this.sortByMarks();
       },
     },
+
   },
   methods: {
     sortByMarks() {
@@ -816,6 +843,7 @@ export default {
 
         localStorage.setItem("products in cart", JSON.stringify(this.cart));
         this.cart = JSON.parse(localStorage.getItem("products in cart")) || [];
+        
       }
     },
   },
