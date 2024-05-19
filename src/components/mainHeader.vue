@@ -140,8 +140,8 @@
 
         <div class="right_block_menu">
           <div class="tel_wrap">
-            <a href="tel:+375 (29) 113-69-69">
-              <span class="icon-phone"></span> +375 (29) 113-69-69</a
+            <a href="tel:+380 (73) 094-67-59">
+              <span class="icon-phone"></span> +380 (73) 094-67-59</a
             >
           </div>
           <button @click="toggleCart()" class="cart" type="button">
