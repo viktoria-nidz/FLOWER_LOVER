@@ -52,9 +52,9 @@
         <div class="tel_wrap">
           <router-link
             @click="toggleMenu"
-            to="tel:+375 (29) 113-69-69"
+            to="tel:+380 (73) 294-59-57"
             class="bigger"
-            >+375 (29) 113-69-69</router-link
+            >+380 (73) 294-59-57</router-link
           >
           <div class="smaller">Прийом дзвінків цілодобово</div>
         </div>
